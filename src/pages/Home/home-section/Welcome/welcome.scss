@@ -1,0 +1,83 @@
+@use "../../../../scss/" as *;
+
+.welcome {
+  &__content {
+    width: 100%;
+    height: 100%;
+    @include flex(center, center);
+  }
+
+  .overlay {
+    @include overlay();
+  }
+
+  &__logo {
+    @font-face {
+      font-family: ValorantFont;
+      src: url(../../../../assets/fonts/Valorant.ttf);
+    }
+    font-family: ValorantFont;
+    font-size: 8.5em;
+    font-weight: 400;
+  }
+}
+
+.btn-wrapper {
+  position: absolute;
+  bottom: 20%;
+  margin: 3.5rem 0;
+  padding: 7px;
+  width: auto;
+  min-width: 15.25rem;
+  cursor: pointer;
+  outline: none;
+  border: 0px;
+  z-index: 2;
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: calc(50% - 0.3rem);
+  }
+  &::before {
+    top: 0;
+    left: -1px;
+    border-top: 1px solid rgba(236, 232, 225, 0.7);
+    border-left: 1px solid rgba(236, 232, 225, 0.7);
+    border-right: 1px solid rgba(236, 232, 225, 0.7);
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+    // left: 0;
+    border-bottom: 1px solid rgba(236, 232, 225, 0.7);
+    border-right: 1px solid rgba(236, 232, 225, 0.7);
+    border-left: 1px solid rgba(236, 232, 225, 0.7);
+  }
+
+  .play-now__btn {
+    width: 100%;
+    padding: 1.2rem 3rem;
+    background-color: $main-color;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.video-bg {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+  pointer-events: none;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
