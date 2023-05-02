@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Children } from "react";
+import Navbar from "../components/Navbar/";
 
-const MainLayout = () => {
-  return <div>MainLayout</div>;
+import "./mainLayout.scss";
+
+const MainLayout = ({ children }) => {
+  return (
+    <div className="wrapper">
+      <Navbar />
+      <div className="main-container">{children}</div>
+    </div>
+  );
 };
 
 export default MainLayout;

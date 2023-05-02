@@ -1,0 +1,22 @@
+@font-face {
+  font-family: DrukWide;
+  src: url(../assets/font/DrukWide.ttf);
+}
+
+@font-face {
+  font-family: ValorantFont;
+  src: url(../assets/font/Valorant.ttf);
+}
+
+$main-fontSize: 14px;
+
+$main-color: #ff4655;
+$second-color: #1f2326;
+$third-color: #c3a95a;
+
+$text-color: #f5f5f5;
+
+$main-font: "Montserrat", sans-serif;
+
+$mobile-width: 600px;
+$tablet-width: 1024px;
