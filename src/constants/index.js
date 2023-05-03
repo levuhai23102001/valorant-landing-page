@@ -1,3 +1,5 @@
+import { newsBg1, newsBg2, newsBg3 } from "../assets";
+
 export const mainMenuList = [
   {
     title: "Home",
@@ -8,23 +10,23 @@ export const mainMenuList = [
     path: "/agents",
   },
   {
-    title: "News",
-    path: "/news",
-  },
-  {
-    title: "Media",
-    path: "/media",
-  },
-];
-
-export const subMenuList = [
-  {
     title: "Weapons",
     path: "/weapons",
   },
   {
     title: "Maps",
     path: "/maps",
+  },
+];
+
+export const subMenuList = [
+  {
+    title: "News",
+    path: "/news",
+  },
+  {
+    title: "Media",
+    path: "/media",
   },
   {
     title: "Esports",
@@ -33,5 +35,20 @@ export const subMenuList = [
   {
     title: "Support",
     path: "/support",
+  },
+];
+
+export const newsList = [
+  {
+    img: newsBg2,
+    title: "Global open beta: How to play // premier - Valorant",
+  },
+  {
+    img: newsBg3,
+    title: "Premier global open beta Faq",
+  },
+  {
+    img: newsBg1,
+    title: "Community Roundup: April 2023",
   },
 ];

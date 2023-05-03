@@ -1,7 +1,8 @@
 @use "../../../../scss/" as *;
 
-.welcome {
+.welcome-section {
   &__content {
+    position: relative;
     width: 100%;
     height: 100%;
     @include flex(center, center);
@@ -19,6 +20,7 @@
     font-family: ValorantFont;
     font-size: 8.5em;
     font-weight: 400;
+    z-index: 1;
   }
 }
 
@@ -28,7 +30,7 @@
   margin: 3.5rem 0;
   padding: 7px;
   width: auto;
-  min-width: 15.25rem;
+  min-width: 15.5rem;
   cursor: pointer;
   outline: none;
   border: 0px;
@@ -49,35 +51,124 @@
   }
   &::after {
     bottom: 0;
-    right: 0;
-    // left: 0;
+    right: -1px;
     border-bottom: 1px solid rgba(236, 232, 225, 0.7);
     border-right: 1px solid rgba(236, 232, 225, 0.7);
     border-left: 1px solid rgba(236, 232, 225, 0.7);
   }
 
   .play-now__btn {
+    position: relative;
     width: 100%;
     padding: 1.2rem 3rem;
     background-color: $main-color;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     text-transform: uppercase;
+    .square-2x {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #000;
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+      &:nth-child(2) {
+        right: 0;
+        bottom: 0;
+      }
+    }
   }
 }
 
 .video-bg {
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: -999;
+  z-index: -9;
   pointer-events: none;
   video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.news-container {
+  position: fixed;
+  left: 0;
+  width: 16.5rem;
+  height: 31.25rem;
+  gap: 5px 0;
+  overflow: hidden;
+  .news__content--main {
+    position: relative;
+    width: 100%;
+    height: 72%;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: center;
+    }
+    .news__bottom {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      margin-left: 10px;
+      h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+      }
+      span {
+        font-size: 14px;
+        font-family: $main-font;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: rgba(225, 255, 255, 0.8);
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .news__content--sub {
+    position: relative;
+    width: 100%;
+    height: calc(28% - 5px);
+    background-color: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+    .news-swiper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .news--sub__wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .news--sub__title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 4px 8px;
+        font-size: 11px;
+        text-transform: uppercase;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
   }
 }

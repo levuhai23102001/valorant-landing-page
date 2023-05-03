@@ -11,17 +11,31 @@ import "./home.scss";
 SwiperCore.use([EffectFade, Mousewheel, Navigation]);
 
 const Home = () => {
-  const swiperOptions = {};
+  const swiperOptions = {
+    spaceBetween: 0,
+    effect: "fade",
+    effectFade: {
+      crossFade: true,
+    },
+    noSwiping: true,
+    noSwipingClass: {
+      el: "no-swiper",
+    },
+    mousewheel: true,
+    speed: 1000,
+    onSwiper: (swiper) => console.log(swiper),
+    onSlideChange: (index) => console.log(index.activeIndex),
+  };
 
   return (
     <>
       <div className="home-container">
-        <Swiper>
+        <Swiper {...swiperOptions} className="mySwiper">
           <SwiperSlide>
-            {(isActive) => <Welcome isActive={isActive} />}
+            {({ isActive }) => <Welcome isActive={isActive} />}
           </SwiperSlide>
           <SwiperSlide>
-            {(isActive) => <Agent isActive={isActive} />}
+            {({ isActive }) => <Agent isActive={isActive} />}
           </SwiperSlide>
         </Swiper>
       </div>

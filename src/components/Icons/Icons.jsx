@@ -1,14 +1,14 @@
 export const ValorantLogo = () => (
   <svg
-    width="58"
-    height="50"
-    viewBox="0 0 58 50"
+    width="48"
+    height="40"
+    viewBox="0 0 48 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 24.7934V0L38.6003 50H19.3002L0 24.7934Z" fill="white" />
+    <path d="M0 19.8347V0L31.9451 40H15.9726L0 19.8347Z" fill="white" />
     <path
-      d="M51.5334 33.2645H32.6312L58 0V24.7934L51.5334 33.2645Z"
+      d="M42.6484 26.6116H27.0051L48 0V19.8347L42.6484 26.6116Z"
       fill="white"
     />
   </svg>

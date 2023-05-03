@@ -14,8 +14,12 @@ body {
 }
 
 body {
+  @font-face {
+    font-family: mainFontFamily;
+    src: url(../src/assets/fonts/DrukWide.ttf);
+  }
   color: #fff;
-  font-family: $main-font;
+  font-family: mainFontFamily;
   font-size: 14px;
   font-weight: 400;
   background-color: #000;
