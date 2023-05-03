@@ -8,4 +8,4 @@
 - Make luv not war 💖💛🧡💚💙💜.
 
 HOMEPAGE
-![image](https://user-images.githubusercontent.com/58142935/235894015-7f282241-6cf4-48fe-9c06-2b3e96f24184.png)
+![image](https://user-images.githubusercontent.com/58142935/235991224-b31069d7-ce77-4ec5-8756-a1d2d2cdf4f9.png)
