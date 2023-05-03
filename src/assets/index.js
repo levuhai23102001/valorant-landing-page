@@ -6,4 +6,6 @@ import newsBg1 from "./backgrounds/newsBg1.jpg";
 import newsBg2 from "./backgrounds/newsBg2.jpg";
 import newsBg3 from "./backgrounds/newsBg3.jpg";
 
-export { videoBg, ValEP6, arcade, newsBg1, newsBg2, newsBg3 };
+import btnPrev from "./btnPrev.png";
+
+export { videoBg, ValEP6, arcade, newsBg1, newsBg2, newsBg3, btnPrev };

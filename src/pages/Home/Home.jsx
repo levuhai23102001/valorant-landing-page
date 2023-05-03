@@ -14,7 +14,7 @@ const Home = () => {
   const swiperOptions = {
     spaceBetween: 0,
     effect: "fade",
-    effectFade: {
+    effectfade: {
       crossFade: true,
     },
     noSwiping: true,
