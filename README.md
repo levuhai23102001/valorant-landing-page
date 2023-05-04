@@ -10,5 +10,5 @@
 HOMEPAGE
 ![image](https://user-images.githubusercontent.com/58142935/236306941-81f7064e-9780-4194-8d61-e6ed02ee19da.png)
 
-![image](https://user-images.githubusercontent.com/58142935/236307453-21fc0fb5-4e0a-4774-a842-a2f052c833c7.png)
+![image](https://user-images.githubusercontent.com/58142935/236307717-05dbea0e-de24-48e8-a5cc-d9c668242d73.png)
 
