@@ -21,6 +21,7 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="navbar-brand">
+            <div className="overlay"></div>
             <ValorantLogo />
             {/* <span className="navbar-brand__name">VALORANT</span> */}
           </div>

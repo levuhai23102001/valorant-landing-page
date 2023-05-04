@@ -11,7 +11,7 @@
   z-index: 9;
   padding: 0 30px;
   white-space: nowrap;
-  border-bottom: 1px solid $main-color;
+  border-bottom: 1px solid rgba(255, 70, 85, 0.45);
 }
 
 .navbar-wrapper {
@@ -36,17 +36,17 @@
       padding: 25px 20px;
       text-transform: uppercase;
       font-size: 10px;
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: auto;
-        width: 0;
-        height: 2px;
-        background: $main-color;
-        transition: 0.3s ease-in-out;
-      }
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   bottom: 0;
+      //   right: 0;
+      //   left: auto;
+      //   width: 0;
+      //   height: 2px;
+      //   background: $main-color;
+      //   transition: 0.3s ease-in-out;
+      // }
       &.active {
         text-shadow: 0 0 0.5rem $text-color;
         &::before {
@@ -74,26 +74,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $main-color;
+  background-image: url(../../../assets/backgrounds/logoBg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
-  &::before {
-    content: "";
+  .overlay {
     position: absolute;
     top: 0;
-    left: 30px;
+    left: 0;
+    width: 100%;
     height: 100%;
-    width: 6px;
-    background-color: #000;
-    transform: skew(38.5deg);
+    z-index: -1;
+    background-color: $main-color;
+    opacity: 0.85;
   }
+  &::before,
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    right: 30px;
-    height: 100%;
     width: 6px;
+    height: 100%;
     background-color: #000;
+  }
+  &::before {
+    left: 30px;
+    transform: skew(38.5deg);
+  }
+  &::after {
+    right: 30px;
     transform: skew(-38.5deg);
   }
 }

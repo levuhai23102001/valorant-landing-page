@@ -1,6 +1,7 @@
 import React from "react";
 import { videoBg } from "../../assets";
 import { Welcome, Agent } from "./home-section";
+import HomeFooter from "./home-footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectFade, Mousewheel, Navigation } from "swiper";
 import "swiper/css";
@@ -38,6 +39,7 @@ const Home = () => {
             {({ isActive }) => <Agent isActive={isActive} />}
           </SwiperSlide>
         </Swiper>
+        <HomeFooter />
       </div>
     </>
   );

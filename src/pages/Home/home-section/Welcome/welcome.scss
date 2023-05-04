@@ -147,8 +147,9 @@
     width: 40px;
     height: 40px;
     background-color: #000;
-    top: 45%;
+    top: 50%;
     right: -20%;
+    transform: translateY(-50%);
     padding: 6px;
     border-radius: 50%;
     border: 1px solid $main-color;
@@ -234,11 +235,12 @@
       .swiper-pagination {
         &-bullet {
           position: relative;
-          width: 6px;
-          height: 6px;
-          background-color: $main-color;
+          width: 5px;
+          height: 5px;
+          background-color: #00ffca;
           opacity: 0.45;
           transition: 0.3s ease;
+          margin-left: 6px;
           &-active {
             opacity: 1;
             transition: 0.3s ease;
@@ -250,16 +252,16 @@
               height: 100%;
             }
             &::before {
-              top: -3.5px;
-              left: -3.5px;
-              border-top: 2px solid $main-color;
-              border-left: 2px solid $main-color;
+              top: -4px;
+              left: -4px;
+              border-top: 2px solid #00ffca;
+              border-left: 2px solid #00ffca;
             }
             &::after {
-              bottom: -3.5px;
-              right: -3.5px;
-              border-bottom: 2px solid $main-color;
-              border-right: 2px solid $main-color;
+              bottom: -4px;
+              right: -4px;
+              border-bottom: 2px solid #00ffca;
+              border-right: 2px solid #00ffca;
             }
           }
         }
