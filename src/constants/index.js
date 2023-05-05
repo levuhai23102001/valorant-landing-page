@@ -79,6 +79,6 @@ export const socialList = [
   },
   {
     icon: DiscordIcon,
-    path: "http://www.facebook.com/Milky2310",
+    path: "https://discord.gg/uTNXaAh8",
   },
 ];
