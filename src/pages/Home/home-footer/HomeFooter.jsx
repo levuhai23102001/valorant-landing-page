@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import valogo from "../../../../public/logo/valogo.png";
 import plus from "../../../assets/18plus.png";
@@ -10,9 +10,26 @@ import "./homeFooter.scss";
 const HomeFooter = () => {
   const [showCopyright, setShowCopyright] = useState(false);
 
+  const copyrightRef = useRef(null);
+
   const handleShowCopyright = () => {
-    setShowCopyright(!showCopyright);
+    setShowCopyright(true);
   };
+  const handleHideCopyright = () => {
+    setShowCopyright(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (copyrightRef.current && !copyrightRef.current.contains(e.target)) {
+        setShowCopyright(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [copyrightRef]);
 
   return (
     <>
@@ -30,17 +47,25 @@ const HomeFooter = () => {
         </div>
       </div>
       <div
+        ref={copyrightRef}
         className={
           !showCopyright ? "copyright-container" : "copyright-container show"
         }
       >
-        <div className="copyright-wrapper">
-          <div className="copyright" onClick={handleShowCopyright}>
-            Copyrights
+        {showCopyright ? (
+          <div className="copyright-close__btn" onClick={handleHideCopyright}>
+            <span>Close</span>
           </div>
-          <div className="divider"></div>
-          <div className="actor">M 1 L K Y</div>
-        </div>
+        ) : (
+          <div className="copyright-wrapper">
+            <div className="copyright" onClick={handleShowCopyright}>
+              Copyrights
+            </div>
+            <div className="divider"></div>
+            <div className="actor">M 1 L K Y</div>
+          </div>
+        )}
+
         <div className="copyright-inner">
           <RiotLogo className="copyright__logo" />
           <div className="copyright__content">

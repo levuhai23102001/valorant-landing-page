@@ -1,7 +1,7 @@
 import React from "react";
-import { videoBg } from "../../assets";
-import { Welcome, Agent } from "./home-section";
+import SocialList from "./social-list/";
 import HomeFooter from "./home-footer";
+import { Welcome, Agent } from "./home-section";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectFade, Mousewheel, Navigation } from "swiper";
 import "swiper/css";
@@ -31,6 +31,7 @@ const Home = () => {
   return (
     <>
       <div className="home-container">
+        <SocialList />
         <Swiper {...swiperOptions} className="mySwiper">
           <SwiperSlide>
             {({ isActive }) => <Welcome isActive={isActive} />}
