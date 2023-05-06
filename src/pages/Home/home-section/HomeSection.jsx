@@ -4,7 +4,10 @@ import Section, { SectionContent } from "../../../components/Section/Section";
 const HomeSection = (props) => {
   return (
     <Section className={props.className}>
-      <SectionContent className={props.contentClassName} style={props.bgImg}>
+      <SectionContent
+        className={props.contentClassName}
+        bgImage={props.bgImage}
+      >
         {props.children}
       </SectionContent>
     </Section>
