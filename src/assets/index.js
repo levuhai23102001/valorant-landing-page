@@ -14,6 +14,13 @@ import fadeIcon from "./fadeIcon.png";
 import sageIcon from "./sageIcon.png";
 import phoenixIcon from "./phoenixIcon.png";
 import roleIcon from "./displayRoleIcon.png";
+import fullPortrait from "./fullPotrait.png";
+import decoration from "./Decoration.png";
+import tagName from "./background.png";
+import skillQ from "./skillQ.png";
+import skillC from "./skillC.png";
+import skillE from "./skillE.png";
+import skillX from "./skillX.png";
 
 export {
   videoBg,
@@ -31,4 +38,11 @@ export {
   sageIcon,
   phoenixIcon,
   roleIcon,
+  fullPortrait,
+  decoration,
+  tagName,
+  skillC,
+  skillX,
+  skillQ,
+  skillE,
 };
