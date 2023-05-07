@@ -16,6 +16,8 @@ import phoenixIcon from "./phoenixIcon.png";
 import roleIcon from "./displayRoleIcon.png";
 import fullPortrait from "./fullPotrait.png";
 import decoration from "./Decoration.png";
+import divArrow from "./divArrow.png";
+import midArrow from "./Mid.png";
 import tagName from "./background.png";
 import skillQ from "./skillQ.png";
 import skillC from "./skillC.png";
@@ -45,4 +47,6 @@ export {
   skillX,
   skillQ,
   skillE,
+  divArrow,
+  midArrow,
 };
