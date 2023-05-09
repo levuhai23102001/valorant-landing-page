@@ -4,3 +4,19 @@
   height: 100%;
   display: flex;
 }
+
+.prev-slide-btn,
+.next-slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  cursor: pointer;
+}
+.prev-slide-btn {
+  left: 10px;
+}
+.next-slide-btn {
+  right: 10px;
+  transform: rotate(180deg);
+}

@@ -13,7 +13,7 @@ import "./welcome.scss";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
-const swiperOptions = {
+const swiperNewsOptions = {
   spaceBetween: 0,
   centeredSlides: true,
   autoplay: {
@@ -26,6 +26,7 @@ const swiperOptions = {
     prevEl: ".prev-btn",
     nextEl: ".next-btn",
   },
+  nested: true,
 };
 
 const Welcome = (props) => {
@@ -67,7 +68,11 @@ const Welcome = (props) => {
           </div>
         </div>
         <div className="news__content--sub">
-          <Swiper ref={swiperRef} {...swiperOptions} className="news-swiper">
+          <Swiper
+            ref={swiperRef}
+            {...swiperNewsOptions}
+            className="news-swiper"
+          >
             {newsList.map((news) => (
               <SwiperSlide>
                 <div className="news--sub__wrapper">

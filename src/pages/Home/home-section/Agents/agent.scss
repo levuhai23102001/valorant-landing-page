@@ -55,15 +55,60 @@
     position: absolute;
     top: 50%;
     left: 125px;
+    height: 510px;
     width: 20%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     transform: translateY(-50%);
+    // .swiperAgents {
+    //   width: 100%;
+    //   height: 440px;
+    //   .swiper-wrapper {
+    //     position: relative;
+    //     width: 100%;
+    //     height: 100%;
+    //     z-index: 1;
+    //     box-sizing: content-box;
+    //   }
+    //   .swiper-slide {
+    //     &-active {
+    //       .agent-list__item {
+    //         background-color: #fff;
+    //       }
+    //     }
+    //   }
+    // }
+    // .prevAgent-btn,
+    // .nextAgent-btn {
+    //   position: absolute;
+    //   width: 1.625rem;
+    //   height: 1.625rem;
+    //   z-index: 2;
+    //   cursor: pointer;
+    //   img {
+    //     height: 100%;
+    //     width: 100%;
+    //     object-fit: cover;
+    //   }
+    // }
+    // .prevAgent-btn {
+    //   top: 0px;
+    //   left: 28px;
+    //   transform: rotate(90deg);
+    // }
+    // .nextAgent-btn {
+    //   bottom: 0px;
+    //   left: 28px;
+    //   transform: rotate(270deg);
+    // }
     &__item {
       position: relative;
       width: 80px;
       height: 80px;
       border: 1px solid #ffffff7f;
       background-color: rgba(217, 217, 217, 0.15);
-      margin-bottom: 10px;
       cursor: pointer;
       &__icon {
         width: 100%;
@@ -195,7 +240,7 @@
       .agent__info__divider {
         position: absolute;
         top: 45px;
-        right: 180px;
+        right: 189px;
         display: flex;
       }
       .decoration {
