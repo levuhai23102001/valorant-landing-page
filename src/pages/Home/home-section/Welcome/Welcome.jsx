@@ -13,35 +13,35 @@ import "./welcome.scss";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
-const swiperNewsOptions = {
-  spaceBetween: 0,
-  centeredSlides: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-  loop: true,
-  pagination: true,
-  navigation: {
-    prevEl: ".prev-btn",
-    nextEl: ".next-btn",
-  },
-  nested: true,
-};
-
 const Welcome = (props) => {
   const [showNews, setShowNews] = useState(true);
 
   const swiperRef = useRef(null);
 
+  const swiperNewsOptions = {
+    spaceBetween: 0,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: true,
+    navigation: {
+      prevEl: ".prev-btn",
+      nextEl: ".next-btn",
+    },
+    nested: true,
+  };
+
   const handlePrevSlide = () => {
     if (!swiperRef.current) return;
-    swiperRef.current.swiper.slidePrev();
+    swiperRef.current.slidePrev();
   };
 
   const handleNextSlide = () => {
     if (!swiperRef.current) return;
-    swiperRef.current.swiper.slideNext();
+    swiperRef.current.slideNext();
   };
 
   const handleShowNews = () => {

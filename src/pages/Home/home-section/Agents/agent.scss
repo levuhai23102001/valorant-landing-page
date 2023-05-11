@@ -50,320 +50,325 @@
     position: relative;
     width: 100%;
     height: 100%;
-  }
-  .agent-list {
-    position: absolute;
-    top: 50%;
-    left: 125px;
-    height: 510px;
-    width: 20%;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    // .swiperAgents {
-    //   width: 100%;
-    //   height: 440px;
-    //   .swiper-wrapper {
+    .agent-list {
+      position: absolute;
+      top: 50%;
+      left: 125px;
+      height: 510px;
+      width: 20%;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      #swiperAgents {
+        width: 100%;
+        height: 440px;
+        .swiper-wrapper {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          .swiper-slide {
+            // width: 80px;
+            // height: 80px;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            pointer-events: auto !important;
+            &-active {
+              .agent-list__item {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+      .prevAgent-btn,
+      .nextAgent-btn {
+        position: absolute;
+        width: 1.625rem;
+        height: 1.625rem;
+        z-index: 2;
+        cursor: pointer;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .prevAgent-btn {
+        top: 0px;
+        left: 28px;
+        transform: rotate(90deg);
+      }
+      .nextAgent-btn {
+        bottom: 0px;
+        left: 28px;
+        transform: rotate(270deg);
+      }
+      &__item {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #ffffff7f;
+        background-color: rgba(217, 217, 217, 0.15);
+        cursor: pointer;
+        &__icon {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        &__role {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 25%;
+          height: 25%;
+        }
+      }
+    }
+    // .line-box {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 225px;
+    //   display: flex;
+    //   .divider-left,
+    //   .divider-right {
     //     position: relative;
-    //     width: 100%;
-    //     height: 100%;
-    //     z-index: 1;
-    //     box-sizing: content-box;
-    //   }
-    //   .swiper-slide {
-    //     &-active {
-    //       .agent-list__item {
-    //         background-color: #fff;
-    //       }
+    //     width: 1px;
+    //     height: 20rem;
+    //     transform: translateY(-50%);
+    //     background-color: rgba(255, 255, 255, 0.45);
+    //     &::before,
+    //     &::after {
+    //       position: absolute;
+    //       content: "";
+    //       width: 5px;
+    //       height: 5px;
+    //       background-color: #fff;
+    //     }
+    //     &::before {
+    //       top: -20px;
+    //       left: -2px;
+    //     }
+    //     &::after {
+    //       bottom: -20px;
+    //       right: -2px;
     //     }
     //   }
-    // }
-    // .prevAgent-btn,
-    // .nextAgent-btn {
-    //   position: absolute;
-    //   width: 1.625rem;
-    //   height: 1.625rem;
-    //   z-index: 2;
-    //   cursor: pointer;
-    //   img {
-    //     height: 100%;
-    //     width: 100%;
-    //     object-fit: cover;
+    //   .left-line {
+    //     width: 290px;
+    //     height: 1px;
+    //     background-color: rgba(255, 255, 255, 0.45);
     //   }
-    // }
-    // .prevAgent-btn {
-    //   top: 0px;
-    //   left: 28px;
-    //   transform: rotate(90deg);
-    // }
-    // .nextAgent-btn {
-    //   bottom: 0px;
-    //   left: 28px;
-    //   transform: rotate(270deg);
-    // }
-    &__item {
-      position: relative;
-      width: 80px;
-      height: 80px;
-      border: 1px solid #ffffff7f;
-      background-color: rgba(217, 217, 217, 0.15);
-      cursor: pointer;
-      &__icon {
+    //   .mid-arrow {
+    //     position: absolute;
+    //     top: -6px;
+    //     left: 80px;
+    //     width: 50px;
+    //     height: 10px;
+    //     object-fit: contain;
+    //   }
+    //   .polygon {
+    //     transform: translateY(-50%);
+    //     width: 500px;
+    //     height: 500px;
+    //     // border: 2px solid rgba(255, 255, 255, 0.45);
+    //     // border-top: 1px solid transparent;
+    //     // border-left: 2px solid rgba(255, 255, 255, 0.45);
+    //     // border-right: 2px solid rgba(255, 255, 255, 0.45);
+    //     // border-bottom: 1px solid transparent;
+    //     &::before {
+    //       position: absolute;
+    //       content: "";
+    //       top: 125px;
+    //       left: -30px;
+    //       width: 50%;
+    //       height: 50%;
+    //       border-top: 1px solid rgba(236, 232, 225, 0.7);
+    //       border-left: 1px solid rgba(236, 232, 225, 0.7);
+    //       transform: rotate(-45deg);
+    //     }
+    //     &::after {
+    //       position: absolute;
+    //       content: "";
+    //       top: 125px;
+    //       right: 0px;
+    //       width: 50%;
+    //       height: 50%;
+    //       border-top: 1px solid rgba(236, 232, 225, 0.7);
+    //       border-left: 1px solid rgba(236, 232, 225, 0.7);
+    //       transform: rotate(135deg);
+    //     }
+    //   }
+    //   .right-line {
+    //     width: 90px;
+    //     height: 1px;
+    //     background-color: rgba(255, 255, 255, 0.45);
+    //   }
+    .agent-full-portrait {
+      position: absolute;
+      top: 50%;
+      left: 300px;
+      transform: translateY(-50%);
+      width: 853px;
+      height: 853px;
+      z-index: 9;
+      &__img {
+        position: absolute;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-      }
-      &__role {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 25%;
-        height: 25%;
-      }
-    }
-  }
-  // .line-box {
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 225px;
-  //   display: flex;
-  //   .divider-left,
-  //   .divider-right {
-  //     position: relative;
-  //     width: 1px;
-  //     height: 20rem;
-  //     transform: translateY(-50%);
-  //     background-color: rgba(255, 255, 255, 0.45);
-  //     &::before,
-  //     &::after {
-  //       position: absolute;
-  //       content: "";
-  //       width: 5px;
-  //       height: 5px;
-  //       background-color: #fff;
-  //     }
-  //     &::before {
-  //       top: -20px;
-  //       left: -2px;
-  //     }
-  //     &::after {
-  //       bottom: -20px;
-  //       right: -2px;
-  //     }
-  //   }
-  //   .left-line {
-  //     width: 290px;
-  //     height: 1px;
-  //     background-color: rgba(255, 255, 255, 0.45);
-  //   }
-  //   .mid-arrow {
-  //     position: absolute;
-  //     top: -6px;
-  //     left: 80px;
-  //     width: 50px;
-  //     height: 10px;
-  //     object-fit: contain;
-  //   }
-  //   .polygon {
-  //     transform: translateY(-50%);
-  //     width: 500px;
-  //     height: 500px;
-  //     // border: 2px solid rgba(255, 255, 255, 0.45);
-  //     // border-top: 1px solid transparent;
-  //     // border-left: 2px solid rgba(255, 255, 255, 0.45);
-  //     // border-right: 2px solid rgba(255, 255, 255, 0.45);
-  //     // border-bottom: 1px solid transparent;
-  //     &::before {
-  //       position: absolute;
-  //       content: "";
-  //       top: 125px;
-  //       left: -30px;
-  //       width: 50%;
-  //       height: 50%;
-  //       border-top: 1px solid rgba(236, 232, 225, 0.7);
-  //       border-left: 1px solid rgba(236, 232, 225, 0.7);
-  //       transform: rotate(-45deg);
-  //     }
-  //     &::after {
-  //       position: absolute;
-  //       content: "";
-  //       top: 125px;
-  //       right: 0px;
-  //       width: 50%;
-  //       height: 50%;
-  //       border-top: 1px solid rgba(236, 232, 225, 0.7);
-  //       border-left: 1px solid rgba(236, 232, 225, 0.7);
-  //       transform: rotate(135deg);
-  //     }
-  //   }
-  //   .right-line {
-  //     width: 90px;
-  //     height: 1px;
-  //     background-color: rgba(255, 255, 255, 0.45);
-  //   }
-  .agent-full-portrait {
-    position: absolute;
-    top: 50%;
-    left: 300px;
-    transform: translateY(-50%);
-    width: 853px;
-    height: 853px;
-    z-index: 9;
-    &__img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      z-index: 6;
-    }
-    .tag-name {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      opacity: 0.5;
-    }
-  }
-
-  .agent__info {
-    position: absolute;
-    top: 66px;
-    width: 20%;
-    height: 100%;
-    right: 125px;
-    display: flex;
-    &__container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      .agent__info__divider {
-        position: absolute;
-        top: 45px;
-        right: 189px;
-        display: flex;
-      }
-      .decoration {
-        width: 256px;
-        height: 350px;
         object-fit: contain;
+        z-index: 6;
       }
-      .div-arrow {
-        position: absolute;
-        top: 101.5px;
-        right: 116px;
-        width: 12.5px;
-        height: 60.5px;
+      .tag-name {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0.5;
       }
-      .agent__info__wrapper {
-        position: absolute;
-        top: 20px;
-        right: -40px;
-        display: flex;
-        flex-direction: column;
-        .role-text {
-          color: rgb(255, 255, 255);
-          font-family: $main-font;
-          text-transform: uppercase;
-          letter-spacing: 5px;
-          font-size: 12px;
-          margin-bottom: 8px;
-        }
-        .agent-name {
-          font-family: $second-font;
-          color: #eaeeb2;
-          font-size: 80px;
-          font-weight: 400;
-          line-height: 80px;
-          letter-spacing: -0.01em;
-          text-transform: uppercase;
-          margin-bottom: 25px;
-        }
-        .agent__abilities {
-          position: relative;
+    }
+
+    .agent__info {
+      position: absolute;
+      top: 66px;
+      width: 20%;
+      height: 100%;
+      right: 125px;
+      display: flex;
+      &__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .agent__info__divider {
+          position: absolute;
+          top: 45px;
+          right: 189px;
           display: flex;
-          align-items: flex-start;
-          gap: 2px;
-          &__item {
+        }
+        .decoration {
+          width: 256px;
+          height: 350px;
+          object-fit: contain;
+        }
+        .div-arrow {
+          position: absolute;
+          top: 101.5px;
+          right: 116px;
+          width: 12.5px;
+          height: 60.5px;
+        }
+        .agent__info__wrapper {
+          position: absolute;
+          top: 20px;
+          right: -40px;
+          display: flex;
+          flex-direction: column;
+          .role-text {
+            color: rgb(255, 255, 255);
+            font-family: $main-font;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 12px;
+            margin-bottom: 8px;
+          }
+          .agent-name {
+            font-family: $second-font;
+            color: #eaeeb2;
+            font-size: 80px;
+            font-weight: 400;
+            line-height: 80px;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+          }
+          .agent__abilities {
             position: relative;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #ffffff24;
-            padding: 3px;
-            width: 66px;
-            height: 74px;
-            cursor: pointer;
-            &::before {
-              position: absolute;
-              content: "";
-              top: 30px;
-              left: 0;
-              width: 100%;
-              height: 1px;
-              background-color: rgba(255, 255, 255, 0.5);
-            }
-            &::after {
-              position: absolute;
-              content: "";
-              top: 30px;
-              left: 50%;
-              transform: translateX(-50%);
-              width: 10px;
-              height: 1.5px;
-              background-color: #ffffff;
-            }
-            h3 {
+            align-items: flex-start;
+            gap: 2px;
+            &__item {
               position: relative;
-              font-size: 12px;
-              text-transform: uppercase;
-              font-family: $main-font;
-              font-weight: 400;
-              width: 100%;
-              text-align: center;
-              padding: 5px 0;
-              letter-spacing: 0.5px;
-              background-color: rgba(255, 255, 255, 0.5);
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              background-color: #ffffff24;
+              padding: 3px;
+              width: 66px;
+              height: 74px;
+              cursor: pointer;
+              &::before {
+                position: absolute;
+                content: "";
+                top: 30px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: rgba(255, 255, 255, 0.5);
+              }
+              &::after {
+                position: absolute;
+                content: "";
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 10px;
+                height: 1.5px;
+                background-color: #ffffff;
+              }
+              h3 {
+                position: relative;
+                font-size: 12px;
+                text-transform: uppercase;
+                font-family: $main-font;
+                font-weight: 400;
+                width: 100%;
+                text-align: center;
+                padding: 5px 0;
+                letter-spacing: 0.5px;
+                background-color: rgba(255, 255, 255, 0.5);
+              }
+            }
+            &__icon {
+              position: absolute;
+              bottom: 6px;
+              width: 40%;
+              height: 40%;
+              object-fit: contain;
             }
           }
-          &__icon {
-            position: absolute;
-            bottom: 6px;
-            width: 40%;
-            height: 40%;
-            object-fit: contain;
-          }
-        }
-        .agent-introduce {
-          position: relative;
-          & > * {
-            margin-top: 10px;
-          }
-          &__top {
-            font-size: 12px;
-            font-family: $main-font;
-            color: #eaeeb2;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-          }
-          &__bottom {
-            h3 {
-              font-size: 20px;
-              font-family: $main-font;
-              text-transform: uppercase;
-              color: $text-color;
-              font-weight: 500;
-              letter-spacing: 0.5px;
-              text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+          .agent-introduce {
+            position: relative;
+            & > * {
+              margin-top: 10px;
             }
-            p {
+            &__top {
               font-size: 12px;
               font-family: $main-font;
-              color: rgba(255, 255, 255, 0.8);
-              font-weight: 500;
+              color: #eaeeb2;
+              font-weight: 600;
               letter-spacing: 1px;
               text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+            }
+            &__bottom {
+              h3 {
+                font-size: 20px;
+                font-family: $main-font;
+                text-transform: uppercase;
+                color: $text-color;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+              }
+              p {
+                font-size: 12px;
+                font-family: $main-font;
+                color: rgba(255, 255, 255, 0.8);
+                font-weight: 500;
+                letter-spacing: 1px;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+              }
             }
           }
         }

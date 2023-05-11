@@ -2,36 +2,39 @@ import React, { useState, useEffect, useRef } from "react";
 import HomeSection from "../HomeSection";
 import valorantApi from "../../../../api/valorantAPI";
 import AgentDetails from "./agent-details";
+import AgentIcon from "./agent-icons";
 import { LotusBg, btnPrev } from "../../../../assets";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/css";
+import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "./agent.scss";
 
-// SwiperCore.use([Navigation]);
-
-// const swiperOptions = {
-//   direction: "vertical",
-//   slidesPerView: 5,
-//   spaceBetween: 10,
-//   navigation: {
-//     prevEl: ".prevAgent-btn",
-//     nextEl: ".nextAgent-btn",
-//   },
-//   noSwiping: true,
-//   noSwipingClass: {
-//     el: "swiper-no-swiping",
-//   },
-//   slideToClickedSlide: true,
-//   nested: true,
-//   speed: 600,
-// };
+SwiperCore.use([Navigation]);
 
 const Agent = (props) => {
   const [agents, setAgents] = useState([]);
 
   const swiperAgentRef = useRef(null);
+
+  const swiperAgentOptions = {
+    direction: "vertical",
+    spaceBetween: 10,
+    slidesPerView: "auto",
+    nested: true,
+    speed: 600,
+    navigation: {
+      prevEl: ".prevAgent-btn",
+      nextEl: ".nextAgent-btn",
+    },
+    // noSwiping: true,
+    // noSwipingClass: {
+    //   el: "swiper-no-swiping",
+    // },
+    // slidesPerGroup: 1,
+    // loop: true,
+  };
 
   useEffect(() => {
     const getAgents = async () => {
@@ -49,12 +52,12 @@ const Agent = (props) => {
 
   const handlePrevAgent = () => {
     if (!swiperAgentRef.current) return;
-    swiperAgentRef.current.swiper.slidePrev();
+    swiperAgentRef.current.slidePrev();
   };
 
   const handleNextAgent = () => {
     if (!swiperAgentRef.current) return;
-    swiperAgentRef.current.swiper.slideNext();
+    swiperAgentRef.current.slideNext();
   };
 
   return (
@@ -68,12 +71,26 @@ const Agent = (props) => {
       </div>
       <div className="agent-section__main">
         <div className="agent-list">
-          {/* <div className="prevAgent-btn">
+          <Swiper
+            ref={swiperAgentRef}
+            {...swiperAgentOptions}
+            id="swiperAgents"
+          >
+            {agents.map((agent, index) => (
+              <SwiperSlide key={index}>
+                <AgentIcon
+                  agentIcon={agent.displayIcon}
+                  roleIcon={agent?.role?.displayIcon}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="prevAgent-btn">
             <img src={btnPrev} alt="" onClick={handlePrevAgent} />
           </div>
           <div className="nextAgent-btn">
             <img src={btnPrev} alt="" onClick={handleNextAgent} />
-          </div> */}
+          </div>
         </div>
         <AgentDetails />
       </div>

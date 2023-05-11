@@ -11,6 +11,8 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 9;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
   cursor: pointer;
 }
 .prev-slide-btn {
@@ -19,4 +21,10 @@
 .next-slide-btn {
   right: 10px;
   transform: rotate(180deg);
+}
+
+.swiper-button-disabled {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
 }
