@@ -5,7 +5,7 @@
 
 - 💎 I'm Hai aka M1LKY, I'm from VietNam
 - Happy Coding 🥰
-- Make luv not war 💖💛🧡💚💙💜
+- Make luv not war 💖💛🧡💚💙💜.
 
 HOMEPAGE
 ![image](https://user-images.githubusercontent.com/58142935/236443748-9015a0f7-a2b7-4b09-8323-b4201d5f2cd7.png)
