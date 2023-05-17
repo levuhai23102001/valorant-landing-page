@@ -12,4 +12,4 @@ HOMEPAGE
 
 ![image](https://user-images.githubusercontent.com/58142935/236443836-6fe152a3-2fbc-44f3-8065-ca2f732770b5.png)
 
-![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/433388ac-cacd-483e-863f-e3e39eb45815)
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/59a1b4a2-b9da-44ab-897a-ae47450a0a4b)
