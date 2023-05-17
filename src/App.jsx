@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          {myRoutes.map((route) => {
+          {myRoutes.map((route, index) => {
             const Page = route.component;
             let Layout = MainLayout;
             if (route.layout) {
@@ -20,6 +20,7 @@ function App() {
 
             return (
               <Route
+                key={index}
                 path={route.path}
                 element={
                   <Layout>

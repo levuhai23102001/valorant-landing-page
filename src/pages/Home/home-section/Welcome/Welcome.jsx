@@ -6,9 +6,7 @@ import { newsList } from "../../../../constants";
 import { btnPrev } from "../../../../assets";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/swiper-bundle.css";
 import "./welcome.scss";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -68,13 +66,9 @@ const Welcome = (props) => {
           </div>
         </div>
         <div className="news__content--sub">
-          <Swiper
-            ref={swiperRef}
-            {...swiperNewsOptions}
-            className="news-swiper"
-          >
-            {newsList.map((news) => (
-              <SwiperSlide>
+          <Swiper ref={swiperRef} {...swiperNewsOptions} id="news-swiper">
+            {newsList.map((news, index) => (
+              <SwiperSlide key={index}>
                 <div className="news--sub__wrapper">
                   <img src={news.img} alt="" />
                   <h2 className="news--sub__title">{news.title}</h2>

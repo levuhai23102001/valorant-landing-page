@@ -5,36 +5,18 @@ import AgentDetails from "./agent-details";
 import AgentIcon from "./agent-icons";
 import { LotusBg, btnPrev } from "../../../../assets";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
+import SwiperCore, { Navigation, FreeMode } from "swiper";
+import "swiper/swiper-bundle.css";
 import "./agent.scss";
 
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, FreeMode]);
 
 const Agent = (props) => {
   const [agents, setAgents] = useState([]);
+  const [currentAgentIndex, setCurrentAgentIndex] = useState(0);
+  const [agentDetails, setAgentDetails] = useState("");
 
   const swiperAgentRef = useRef(null);
-
-  const swiperAgentOptions = {
-    direction: "vertical",
-    spaceBetween: 10,
-    slidesPerView: "auto",
-    nested: true,
-    speed: 600,
-    navigation: {
-      prevEl: ".prevAgent-btn",
-      nextEl: ".nextAgent-btn",
-    },
-    // noSwiping: true,
-    // noSwipingClass: {
-    //   el: "swiper-no-swiping",
-    // },
-    // slidesPerGroup: 1,
-    // loop: true,
-  };
 
   useEffect(() => {
     const getAgents = async () => {
@@ -50,15 +32,55 @@ const Agent = (props) => {
     getAgents();
   }, []);
 
+  const swiperAgentOptions = {
+    direction: "vertical",
+    slidesPerView: 5,
+    spaceBetween: 10,
+    navigation: {
+      prevEl: ".prev-agent-btn",
+      nextEl: ".next-agent-btn",
+      disabledClass: "swiper-agent-button-disabled",
+    },
+    noSwiping: true,
+    noSwipingClass: {
+      el: "swiper-no-swiping",
+    },
+    onSlideChange: (swiper) => {
+      setCurrentAgentIndex(swiper.realIndex);
+    },
+  };
+
   const handlePrevAgent = () => {
-    if (!swiperAgentRef.current) return;
-    swiperAgentRef.current.slidePrev();
+    if (swiperAgentRef.current && swiperAgentRef.current.slidePrev) {
+      swiperAgentRef.current.swiper?.slidePrev();
+    }
   };
 
   const handleNextAgent = () => {
-    if (!swiperAgentRef.current) return;
-    swiperAgentRef.current.slideNext();
+    if (swiperAgentRef.current && swiperAgentRef.current.slidePrev) {
+      swiperAgentRef.current.swiper?.slideNext();
+    }
   };
+
+  const handleClickDetailsAgent = (index) => {
+    swiperAgentRef.current.swiper?.slideTo(index);
+  };
+
+  // const getAgentDetails = async (agent) => {
+  //   try {
+  //     const uuid = agent.uuid;
+  //     console.log("agentID:" + uuid);
+  //     const response = await valorantApi.getAgentDetails(uuid);
+  //     const agentDetails = await response.data;
+  //     setAgentDetails(agentDetails.data);
+  //   } catch (err) {
+  //     console.error(err, "Error get agents");
+  //   }
+  // };
+
+  // const handleClickDetailsAgent = (agent) => {
+  //   getAgentDetails(agent);
+  // };
 
   return (
     <HomeSection
@@ -77,22 +99,39 @@ const Agent = (props) => {
             id="swiperAgents"
           >
             {agents.map((agent, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={agent.uuid}>
                 <AgentIcon
+                  onClick={() => handleClickDetailsAgent(index)}
                   agentIcon={agent.displayIcon}
                   roleIcon={agent?.role?.displayIcon}
                 />
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="prevAgent-btn">
+          <div className="prev-agent-btn">
             <img src={btnPrev} alt="" onClick={handlePrevAgent} />
           </div>
-          <div className="nextAgent-btn">
+          <div className="next-agent-btn">
             <img src={btnPrev} alt="" onClick={handleNextAgent} />
           </div>
         </div>
-        <AgentDetails />
+        {agents.length > 0 && (
+          <AgentDetails
+            className="agent-details__wrapper"
+            fullPortrait={agents[currentAgentIndex].fullPortrait}
+            bgTagName={agents[currentAgentIndex].background}
+            name={agents[currentAgentIndex].displayName}
+            roleTitle={agents[currentAgentIndex]?.role?.displayName}
+            roleIcon={agents[currentAgentIndex]?.role?.displayIcon}
+            icon={agents[currentAgentIndex]?.abilities?.displayIcon}
+            // skillQ={agents[currentAgentIndex]?.skill}
+            // skillC={agents[currentAgentIndex]?.skill}
+            // skillE={agents[currentAgentIndex]?.skill}
+            // skillX={agents[currentAgentIndex]?.skill}
+            desc={agents[currentAgentIndex]?.description}
+            roleDesc={agents[currentAgentIndex]?.role?.description}
+          />
+        )}
       </div>
     </HomeSection>
   );

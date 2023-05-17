@@ -12,8 +12,8 @@ const Navbar = () => {
       <nav className="navbar navbar-fixed">
         <div className="navbar-wrapper">
           <ul className="navbar-menu">
-            {mainMenuList.map((item) => (
-              <li className="navbar-menu__item">
+            {mainMenuList.map((item, index) => (
+              <li className="navbar-menu__item" key={index}>
                 <NavLink to={item.path} className="navbar-menu__item--link">
                   {item.title}
                 </NavLink>
@@ -23,11 +23,10 @@ const Navbar = () => {
           <div className="navbar-brand">
             <div className="overlay"></div>
             <ValorantLogo />
-            {/* <span className="navbar-brand__name">VALORANT</span> */}
           </div>
           <ul className="navbar-menu">
-            {subMenuList.map((item) => (
-              <li className="navbar-menu__item">
+            {subMenuList.map((item, i) => (
+              <li className="navbar-menu__item" key={i}>
                 <NavLink to={item.path} className="navbar-menu__item--link">
                   {item.title}
                 </NavLink>

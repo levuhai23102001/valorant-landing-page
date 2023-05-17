@@ -7,7 +7,7 @@ import arrow from "../../../assets/arrow.png";
 
 import "./homeFooter.scss";
 
-const HomeFooter = () => {
+const HomeFooter = (props) => {
   const [showCopyright, setShowCopyright] = useState(false);
 
   const copyrightRef = useRef(null);
@@ -40,9 +40,9 @@ const HomeFooter = () => {
         </div>
         <div className="footer__right">
           <div className="mid-line"></div>
-          <h4 className="current-page">01</h4>
+          <h4 className="current-page">{props.current}</h4>
           <img src={arrow} alt="" className="arrow" />
-          <h4 className="total-page">05</h4>
+          <h4 className="total-page">{props.total}</h4>
           <div className="right-line"></div>
         </div>
       </div>
