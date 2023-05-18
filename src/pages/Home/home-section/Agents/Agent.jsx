@@ -15,7 +15,6 @@ const Agent = (props) => {
   const [agents, setAgents] = useState([]);
   const [currentAgentIndex, setCurrentAgentIndex] = useState(0);
   const [tabs, setTabs] = useState(0);
-  const [agentDetails, setAgentDetails] = useState("");
 
   const swiperAgentRef = useRef(null);
 

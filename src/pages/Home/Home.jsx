@@ -12,7 +12,6 @@ SwiperCore.use([EffectFade, Mousewheel, Navigation]);
 
 const Home = () => {
   const [activeSlide, setActiveSlide] = useState(1);
-
   const swiperRef = useRef(null);
 
   const swiperOptions = {
@@ -28,7 +27,6 @@ const Home = () => {
     },
     mousewheel: true,
     speed: 1000,
-    onSwiper: (swiper) => console.log(swiper),
   };
 
   const handlePrev = () => {

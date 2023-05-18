@@ -19,7 +19,6 @@
     min-width: 68px;
     height: 60px;
     margin: 0 25px;
-    display: none;
     @include flex(center, center);
     &::before,
     &::after {

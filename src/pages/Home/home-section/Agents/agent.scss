@@ -97,12 +97,11 @@
       .prev-agent-btn {
         top: 0px;
         left: 28px;
-        transform: rotate(90deg);
       }
       .next-agent-btn {
         bottom: 0px;
         left: 28px;
-        transform: rotate(270deg);
+        transform: rotate(180deg);
       }
       &__item {
         position: relative;

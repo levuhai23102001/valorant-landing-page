@@ -12,18 +12,26 @@
 .next-slide-btn {
   position: absolute;
   top: 50%;
+  width: 40px;
+  height: 40px;
   transform: translateY(-50%);
   z-index: 9;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
   cursor: pointer;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 .prev-slide-btn {
   left: 10px;
+  transform: rotate(-90deg);
 }
 .next-slide-btn {
   right: 10px;
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 
 .swiper-button-disabled {

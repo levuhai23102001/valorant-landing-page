@@ -227,10 +227,11 @@
       }
       .prev-btn {
         left: 0.375rem;
+        transform: rotate(-90deg);
       }
       .next-btn {
         right: 0.375rem;
-        transform: rotate(180deg);
+        transform: rotate(90deg);
       }
       .swiper-pagination {
         &-bullet {
