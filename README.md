@@ -8,8 +8,12 @@
 - Make luv not war 💖💛🧡💚💙💜
 
 HOMEPAGE
-![image](https://user-images.githubusercontent.com/58142935/236443748-9015a0f7-a2b7-4b09-8323-b4201d5f2cd7.png)
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/3a36510e-9017-4a13-a679-74ec67f7f46b)
 
-![image](https://user-images.githubusercontent.com/58142935/236443836-6fe152a3-2fbc-44f3-8065-ca2f732770b5.png)
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/db835389-8da0-466a-87e3-181d9a1bc151)
 
-![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/59a1b4a2-b9da-44ab-897a-ae47450a0a4b)
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/d4b0ce7f-c2db-4c6c-b16e-67af5a59d070)
+
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/d943ec10-56fb-4ba6-aa89-191b1a484c5d)
+
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/529f6642-0220-467a-8d92-50bbb529cf90)
