@@ -7,6 +7,7 @@ import newsBg1 from "./backgrounds/newsBg1.jpg";
 import newsBg2 from "./backgrounds/newsBg2.jpg";
 import newsBg3 from "./backgrounds/newsBg3.jpg";
 import gamePlay from "./backgrounds/valorant_gameplay.mp4";
+import trailer from "./backgrounds/trailer.mp4";
 
 import btnPrev from "./btnPrev.png";
 import spikeIcon from "./Spike.png";
@@ -31,4 +32,5 @@ export {
   midArrow,
   duelist,
   gamePlay,
+  trailer,
 };
