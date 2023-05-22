@@ -45,8 +45,9 @@ const Agent = (props) => {
     noSwipingClass: {
       el: "swiper-no-swiping",
     },
+    speed: 500,
     onSlideChange: (swiper) => {
-      setCurrentAgentIndex(swiper.realIndex);
+      setCurrentAgentIndex(swiper.activeIndex);
       const fullPortrait = document.querySelector(".agent-full-portrait__img");
       const bgTagName = document.querySelector(".tag-name");
       fullPortrait.animate(
@@ -67,6 +68,7 @@ const Agent = (props) => {
           duration: 500,
         }
       );
+      console.log(swiper.activeIndex, swiper.slides.length);
     },
   };
 
@@ -77,7 +79,7 @@ const Agent = (props) => {
   };
 
   const handleNextAgent = () => {
-    if (swiperAgentRef.current && swiperAgentRef.current.slidePrev) {
+    if (swiperAgentRef.current && swiperAgentRef.current.slideNext) {
       swiperAgentRef.current.swiper?.slideNext();
     }
   };
@@ -109,6 +111,7 @@ const Agent = (props) => {
       contentClassName="agent-section__content"
       bgImage={LotusBg}
     >
+      <div className="agent-section__background--sprite"></div>
       <div className="agent-section__title">
         <h1 className="agent-section__title--txt">Agents</h1>
       </div>

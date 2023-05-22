@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import SocialList from "./social-list/";
 import HomeFooter from "./home-footer";
-import { Welcome, Agent } from "./home-section";
+import { Welcome, Agent, Credits } from "./home-section";
 import { btnPrev } from "../../assets";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectFade, Mousewheel, Navigation } from "swiper";
@@ -30,13 +30,15 @@ const Home = () => {
   };
 
   const handlePrev = () => {
-    if (!swiperRef.current) return;
-    swiperRef.current.swiper.slidePrev();
+    if (swiperRef.current && swiperRef.current.slidePrev) {
+      swiperRef.current.swiper?.slidePrev();
+    }
   };
 
   const handleNext = () => {
-    if (!swiperRef.current) return;
-    swiperRef.current.swiper.slideNext();
+    if (swiperRef.current && swiperRef.current.slideNext) {
+      swiperRef.current.swiper?.slideNext();
+    }
   };
 
   return (
@@ -52,6 +54,9 @@ const Home = () => {
           </SwiperSlide>
           <SwiperSlide>
             {({ isActive }) => <Agent isActive={isActive} />}
+          </SwiperSlide>
+          <SwiperSlide>
+            {({ isActive }) => <Credits isActive={isActive} />}
           </SwiperSlide>
         </Swiper>
         <div className="next-slide-btn">

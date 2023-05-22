@@ -15,6 +15,29 @@
     background-size: cover;
     background-blend-mode: multiply;
   }
+  &__background--sprite {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20%;
+      height: 100%;
+      background-image: url(../../../../assets/backgrounds/bgSprite.png);
+      background-repeat: no-repeat;
+    }
+    &::before {
+      top: 0;
+      left: 18rem;
+    }
+    &::after {
+      top: 8rem;
+      right: 0;
+    }
+  }
   &__title {
     position: absolute;
     top: 6rem;
@@ -76,6 +99,7 @@
             &-active {
               .agent-list__item {
                 background-color: #fff;
+                transition: 0.5 ease;
               }
             }
           }
@@ -237,6 +261,7 @@
       height: 100%;
       right: 125px;
       display: flex;
+      z-index: 99;
       &__container {
         position: relative;
         width: 100%;
