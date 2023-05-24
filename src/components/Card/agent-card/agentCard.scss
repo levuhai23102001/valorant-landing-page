@@ -1,0 +1,56 @@
+@use "../../../scss/" as *;
+
+.agent-card {
+  --column: 5;
+  --spacing: 50px;
+  position: relative;
+  @include flex(center, center);
+  flex-direction: column;
+  //   width: calc(calc(100% / var(--column) - var(--spacing)));
+  height: 500px;
+  margin-left: var(--spacing);
+  background-color: black;
+  overflow: hidden;
+  cursor: pointer;
+  clip-path: polygon(
+    100% 0,
+    100% 80%,
+    50% 100%,
+    50% 100%,
+    50% 100%,
+    0% 80%,
+    0 0
+  );
+  &__img {
+    position: absolute;
+    width: 636px;
+    height: 580px;
+    object-fit: contain;
+    z-index: 9;
+    filter: drop-shadow(11px 10px 0 rgba(0, 0, 0, 0.6));
+  }
+  &__background--tagname {
+    position: relative;
+    width: 208px;
+    height: 470px;
+    background-color: $main-color;
+    clip-path: polygon(
+      100% 0,
+      100% 81.5%,
+      50% 100%,
+      50% 100%,
+      50% 100%,
+      0% 81.5%,
+      0 0
+    );
+    img {
+      position: absolute;
+      top: -85px;
+      left: -85px;
+      width: 369px;
+      height: 650px;
+      object-fit: fill;
+      opacity: 0.3;
+    }
+  }
+}
