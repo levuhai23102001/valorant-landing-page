@@ -11,6 +11,8 @@ SwiperCore.use([]);
 
 const Agents = () => {
   const [agents, setAgents] = useState([]);
+  const agentsSet = new Set(agents);
+  console.log(agentsSet);
 
   useEffect(() => {
     const getAgents = async () => {
@@ -18,8 +20,8 @@ const Agents = () => {
         const response = await valorantAPI.getAgentsList();
         const agentsData = response.data;
         setAgents(agentsData.data);
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        console.error("Error fetching data:", error);
       }
     };
     getAgents();
@@ -27,6 +29,7 @@ const Agents = () => {
 
   const swiperOptions = {
     slidesPerView: 5,
+    speed: 500,
   };
 
   return (
@@ -41,7 +44,11 @@ const Agents = () => {
               <SwiperSlide key={agent.uuid}>
                 <AgentCard
                   agentImg={agent.fullPortrait}
+                  bgColor={agent.backgroundGradientColors.map(
+                    (color) => `#${color}`
+                  )}
                   bgTagName={agent.background}
+                  name={agent.displayName}
                 />
               </SwiperSlide>
             ))}

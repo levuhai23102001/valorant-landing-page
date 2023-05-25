@@ -25,8 +25,8 @@ const Agent = (props) => {
         const agentsRes = await response.data;
         console.log(agentsRes.data);
         setAgents(agentsRes.data);
-      } catch (err) {
-        console.error(err, "Error get agents");
+      } catch (error) {
+        console.error("Error fetching data:", error);
       }
     };
     getAgents();

@@ -1,6 +1,7 @@
 const routes = {
   home: "/",
   agents: "/agents",
+  agent_details: "/agents/:id",
   news: "/news",
   media: "/media",
   weapons: "/weapons",

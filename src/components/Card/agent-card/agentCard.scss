@@ -9,7 +9,10 @@
   //   width: calc(calc(100% / var(--column) - var(--spacing)));
   height: 500px;
   margin-left: var(--spacing);
-  background-color: black;
+  background-image: url("../../../assets/backgrounds/cardBg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
   cursor: pointer;
   clip-path: polygon(
@@ -33,7 +36,6 @@
     position: relative;
     width: 208px;
     height: 470px;
-    background-color: $main-color;
     clip-path: polygon(
       100% 0,
       100% 81.5%,
@@ -52,5 +54,18 @@
       object-fit: fill;
       opacity: 0.3;
     }
+  }
+  &__name {
+    position: absolute;
+    top: 100px;
+    left: -50px;
+    width: 200px;
+    font-size: 30px;
+    line-height: 50px;
+    color: #ffffff00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: rotate(90deg);
+    -webkit-text-stroke: 1px #fff;
   }
 }

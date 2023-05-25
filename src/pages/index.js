@@ -4,5 +4,6 @@ import Maps from "./Maps/Maps";
 import Media from "./Media/Media";
 import News from "./News/News";
 import Weapons from "./Weapons/Weapons";
+import AgentDetails from "./Agent-details/AgentDetails";
 
-export { Home, Agents, Maps, Media, News, Weapons };
+export { Home, Agents, Maps, Media, News, Weapons, AgentDetails };
