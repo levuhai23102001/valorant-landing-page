@@ -16,6 +16,7 @@ import decoration from "./Decoration.png";
 import divArrow from "./divArrow.png";
 import midArrow from "./Mid.png";
 import duelist from "./duelist.png";
+import radiant from "./radiant.png";
 
 export {
   videoBg,
@@ -35,4 +36,5 @@ export {
   gamePlay,
   trailer,
   agentBg,
+  radiant,
 };
