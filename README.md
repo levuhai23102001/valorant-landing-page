@@ -19,4 +19,4 @@ HOMEPAGE
 ![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/529f6642-0220-467a-8d92-50bbb529cf90)
 
 AGENTS PAGE
-![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/c75141fd-0b78-4c70-95a3-1dd4741f3a5a)
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/78b12c6f-7d1f-40c4-8ace-0e946d89d347)
