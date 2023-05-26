@@ -1,6 +1,6 @@
 import videoBg from "./backgrounds/HomePage.mp4";
 import ValEP6 from "./backgrounds/ValEP6.mp4";
-import arcade from "./backgrounds/arcade.jpg";
+import topNews from "./backgrounds/topNews.jpg";
 import LotusBg from "./backgrounds/LotusBg.jpg";
 import SplitBg from "./backgrounds/splitBg.jpg";
 import newsBg1 from "./backgrounds/newsBg1.jpg";
@@ -21,7 +21,7 @@ import radiant from "./radiant.png";
 export {
   videoBg,
   ValEP6,
-  arcade,
+  topNews,
   newsBg1,
   newsBg2,
   newsBg3,

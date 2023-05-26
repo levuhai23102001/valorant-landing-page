@@ -48,15 +48,15 @@ export const subMenuList = [
 export const newsList = [
   {
     img: newsBg2,
-    title: "Global open beta: How to play // premier - Valorant",
+    title: "Valorant patch notes 6.10",
   },
   {
     img: newsBg3,
-    title: "Premier global open beta Faq",
+    title: "Valorant Data drop: Phantom Vs. Vandal",
   },
   {
     img: newsBg1,
-    title: "Community Roundup: April 2023",
+    title: "Challengers Ascension is coming!",
   },
 ];
 

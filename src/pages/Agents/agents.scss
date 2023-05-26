@@ -32,18 +32,17 @@
     width: 100%;
     height: 100%;
   }
-}
-
-.center-logo {
-  position: absolute;
-  width: 550px;
-  height: 460px;
-  top: 25%;
-  svg {
-    width: 100%;
-    height: 100%;
-    color: $main-color;
-    filter: drop-shadow(0 0 5rem $main-color);
+  .center-logo {
+    position: absolute;
+    width: 550px;
+    height: 460px;
+    top: 25%;
+    svg {
+      width: 100%;
+      height: 100%;
+      color: $main-color;
+      filter: drop-shadow(0 0 5rem $main-color);
+    }
   }
 }
 
@@ -58,7 +57,7 @@
 
 .agentsSwiper {
   position: absolute;
-  top: 18%;
+  top: 20%;
   width: 100%;
   height: 100%;
 }

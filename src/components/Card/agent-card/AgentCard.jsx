@@ -11,7 +11,7 @@ const AgentCard = (props) => {
 
   return (
     <>
-      <div className="agent-card">
+      <div className="agent-card" onClick={props.onClickAgent}>
         <img src={props.agentImg} alt="" className="agent-card__img" />
         <div className="agent-card__background--tagname" style={bgColor}>
           <img src={props.bgTagName} alt="" className="agent-card__bgTagName" />

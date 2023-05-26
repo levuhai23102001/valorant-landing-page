@@ -1,10 +1,14 @@
-export const ValorantLogo = () => (
+export const ValorantLogo = (props) => (
   <svg
     width="48"
     height="40"
     viewBox="0 0 48 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    style={{
+      color: props.color,
+      filter: `drop-shadow(0 0 5rem ${props.color})`,
+    }}
   >
     <path d="M0 19.8347V0L31.9451 40H15.9726L0 19.8347Z" fill="currentColor" />
     <path

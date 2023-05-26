@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { ValEP6, arcade } from "../../../../assets";
+import { ValEP6, topNews } from "../../../../assets";
 import valogo from "../../../../../public/logo/valogo.png";
 import HomeSection from "../HomeSection";
 import { newsList } from "../../../../constants";
@@ -59,9 +59,9 @@ const Welcome = (props) => {
           <img src={valogo} alt="" />
         </div>
         <div className="news__content--main">
-          <img src={arcade} alt="" className="news__img" />
+          <img src={topNews} alt="" className="news__img" />
           <div className="news__bottom">
-            <h1 className="news__title">Featured</h1>
+            <h1 className="news__title">Run It Back 4</h1>
             <span>collection</span>
           </div>
         </div>

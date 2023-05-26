@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AgentCard } from "../../components/Card/";
 import { ValorantLogo } from "../../components/Icons";
 import valorantAPI from "../../api/valorantAPI";
@@ -11,8 +12,7 @@ SwiperCore.use([]);
 
 const Agents = () => {
   const [agents, setAgents] = useState([]);
-  const agentsSet = new Set(agents);
-  console.log(agentsSet);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getAgents = async () => {
@@ -32,6 +32,10 @@ const Agents = () => {
     speed: 500,
   };
 
+  const handleClickDetailsAgent = (agent) => {
+    navigate(`/agents/` + agent.uuid);
+  };
+
   return (
     <div className="agents-container">
       <div className="agent__wrapper--main">
@@ -43,6 +47,7 @@ const Agents = () => {
             {agents.map((agent, index) => (
               <SwiperSlide key={agent.uuid}>
                 <AgentCard
+                  onClickAgent={() => handleClickDetailsAgent(agent)}
                   agentImg={agent.fullPortrait}
                   bgColor={agent.backgroundGradientColors.map(
                     (color) => `#${color}`
