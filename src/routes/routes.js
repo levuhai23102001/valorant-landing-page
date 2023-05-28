@@ -6,7 +6,7 @@ import {
   Maps,
   News,
   Media,
-  Weapons,
+  Inventory,
   AgentDetails,
 } from "../pages";
 
@@ -17,7 +17,7 @@ const myRoutes = [
   { path: configs.routes.maps, component: Maps },
   { path: configs.routes.news, component: News },
   { path: configs.routes.media, component: Media },
-  { path: configs.routes.weapons, component: Weapons },
+  { path: configs.routes.inventory, component: Inventory },
 ];
 
 export { myRoutes };

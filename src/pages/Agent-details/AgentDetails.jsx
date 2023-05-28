@@ -27,9 +27,20 @@ const AgentDetails = (props) => {
 
   return (
     <div className="agent-details-container">
-      <div className="agent-details__wrapper--main">
+      <div className="agent-details__background">
         <div className="center-logo">
           <ValorantLogo color={"#" + color} />
+        </div>
+        <div className="agent-details-content">
+          <h1 className="agent-details-content__name">
+            {agentDetails.displayName}
+          </h1>
+          <div className="agent-details-content__fullPortrait">
+            <img
+              src={agentDetails.fullPortrait}
+              className="agent-details-content__fullPortrait--img"
+            />
+          </div>
         </div>
       </div>
     </div>

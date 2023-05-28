@@ -1,4 +1,4 @@
 import AgentCard from "./agent-card/AgentCard";
-import WeaponCard from "./weapon-card/WeaponCard";
+import InventoryCard from "./inventory-card/InventoryCard";
 
-export { AgentCard, WeaponCard };
+export { AgentCard, InventoryCard };

@@ -4,7 +4,7 @@ const routes = {
   agent_details: "/agents/:id",
   news: "/news",
   media: "/media",
-  weapons: "/weapons",
+  inventory: "/inventory",
   maps: "/maps",
   esports: "/esports",
   support: "/support",

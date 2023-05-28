@@ -17,8 +17,8 @@ export const mainMenuList = [
     path: "/agents",
   },
   {
-    title: "Weapons",
-    path: "/weapons",
+    title: "Inventory",
+    path: "/inventory",
   },
   {
     title: "Maps",

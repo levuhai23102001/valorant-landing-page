@@ -8,8 +8,8 @@
   overflow: hidden;
 }
 
-.agent-details__wrapper--main {
-  position: relative;
+.agent-details__background {
+  position: absolute;
   width: 100%;
   height: 85%;
   @include flex(center, center);
@@ -40,6 +40,45 @@
     svg {
       width: 100%;
       height: 100%;
+    }
+  }
+}
+
+.agent-details-content {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 6;
+  &__name {
+    position: absolute;
+    top: 55%;
+    right: 0;
+    transform: translateY(-55%) rotate(90deg) scale(1.2);
+    @font-face {
+      font-family: ValorantFont;
+      src: url(../../../../assets/fonts/Valorant.ttf);
+    }
+    font-family: ValorantFont;
+    font-size: 5.5em;
+    font-weight: 500;
+    line-height: 100px;
+    height: 100px;
+    color: $main-color;
+    text-shadow: -5px 2px 0px rgba(225, 225, 225, 1);
+  }
+  &__fullPortrait {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 686px;
+    height: 686px;
+    &--img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
