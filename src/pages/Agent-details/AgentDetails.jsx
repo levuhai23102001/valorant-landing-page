@@ -32,9 +32,7 @@ const AgentDetails = (props) => {
           <ValorantLogo color={"#" + color} />
         </div>
         <div className="agent-details-content">
-          <h1 className="agent-details-content__name">
-            {agentDetails.displayName}
-          </h1>
+          <h1 className="agent-details-content__text--logo">vAlorant</h1>
           <div className="agent-details-content__fullPortrait">
             <img
               src={agentDetails.fullPortrait}

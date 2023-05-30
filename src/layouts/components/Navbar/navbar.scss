@@ -89,21 +89,4 @@
     background-color: $main-color;
     opacity: 0.85;
   }
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 6px;
-    height: 100%;
-    background-color: #000;
-  }
-  &::before {
-    left: 30px;
-    transform: skew(38.5deg);
-  }
-  &::after {
-    right: 30px;
-    transform: skew(-38.5deg);
-  }
 }

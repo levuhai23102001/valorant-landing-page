@@ -1,8 +1,15 @@
 import React from "react";
 import "./inventoryCard.scss";
 
-const InventoryCard = () => {
-  return <div>InventoryCard</div>;
+const InventoryCard = (props) => {
+  return (
+    <div className="inventory-card">
+      <div className="inventory-card__content">
+        <img src={props.itemImg} alt="" className="inventory-card__img" />
+      </div>
+      <div className="inventory-card__name">{props.itemName}</div>
+    </div>
+  );
 };
 
 export default InventoryCard;

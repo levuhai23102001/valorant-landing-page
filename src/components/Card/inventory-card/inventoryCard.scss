@@ -1,0 +1,73 @@
+@use "../../../scss/" as *;
+
+.inventory-card {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  padding: 10px 20px;
+  border: 1px solid #ffffff50;
+  background-color: #ffffff20;
+  backdrop-filter: blur(5px);
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(225, 225, 225, 0.3);
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+    transition: 0.3s ease;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 69%,
+      rgb(0, 255, 202, 0.4)
+    );
+    transition: 0.3s ease;
+  }
+  &:hover {
+    border: 1px solid #00ffca;
+    transition: 0.3s ease;
+    &::before {
+      background-color: #00ffca;
+      transition: 0.3s ease;
+    }
+    &::after {
+      opacity: 1;
+      transition: 0.3s ease;
+    }
+  }
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &__name {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #ffffffa1;
+  }
+}
