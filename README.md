@@ -5,7 +5,7 @@
 
 - 💎 I'm Hai aka M1LKY, I'm from VietNam
 - Happy Coding 🥰
-- Make luv not war 💖💛🧡💚💙💜
+- Make luv not war 💖💛🧡💚💙💜💖
 
 HOMEPAGE
 ![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/3a36510e-9017-4a13-a679-74ec67f7f46b)
@@ -22,4 +22,4 @@ AGENTS PAGE
 ![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/ce6ca2b6-b8a0-445a-b03d-57bafe1a762b)
 
 AGENT DETAILS PAGE
-![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/c279f9b7-21be-4497-b7df-ca3efa744ba6)
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/1f918e70-37d9-451a-b75d-d34c3c99b49c)
