@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import valorantAPI from "../../../api/valorantAPI";
 import { InventoryCard } from "../../Card";
+import { useNavigate } from "react-router-dom";
 
 import "./inventList.scss";
 
 const InventList = (props) => {
   const [weapons, setWeapons] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getWeapon = async () => {
@@ -26,10 +28,15 @@ const InventList = (props) => {
     getWeapon();
   }, []);
 
+  const handleClickItem = (weapon) => {
+    navigate("weapons/" + weapon.uuid);
+  };
+
   return (
     <div className="inventory-list">
       {weapons.map((weapon, index) => (
         <InventoryCard
+          onClickItem={() => handleClickItem(weapon)}
           key={index}
           itemImg={weapon.displayIcon}
           itemName={weapon.displayName}

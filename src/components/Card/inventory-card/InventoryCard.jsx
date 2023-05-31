@@ -3,7 +3,7 @@ import "./inventoryCard.scss";
 
 const InventoryCard = (props) => {
   return (
-    <div className="inventory-card">
+    <div className="inventory-card" onClick={props.onClickItem}>
       <div className="inventory-card__content">
         <img src={props.itemImg} alt="" className="inventory-card__img" />
       </div>

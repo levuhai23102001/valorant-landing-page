@@ -1,0 +1,119 @@
+@use "../../scss/" as *;
+
+.weapon-details-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-image: url(../../assets/backgrounds/inventBg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  .background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #10121b66;
+    backdrop-filter: blur(6px);
+  }
+}
+
+.weapon-details__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  padding-top: 110px;
+  margin: 0 110px;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  &--bottom {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    #weaponSwiper {
+      width: 100%;
+      height: 200px;
+      @include flex(center, center);
+      overflow-x: hidden;
+      .swiper-wrapper {
+        height: 85px;
+      }
+      .swiper-slide {
+        &-active {
+          .weapon-details__item {
+            &::before {
+              content: "";
+              top: -3px;
+              left: -3px;
+              position: absolute;
+              width: 85px;
+              height: 85px;
+              border: 2px solid $third-color;
+            }
+          }
+        }
+      }
+      .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 9px;
+        width: fit-content;
+        padding: 8px 5px;
+        background-color: #101a23;
+        & > * {
+          margin: 0 6px;
+        }
+      }
+    }
+  }
+}
+
+.prev-weapon-btn,
+.next-weapon-btn {
+  position: absolute;
+  width: 27.2px;
+  height: 27.2px;
+  padding: 3px;
+  bottom: 0;
+  z-index: 2;
+  background-color: #273440;
+  cursor: pointer;
+  &:hover {
+    background-color: #425260;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.prev-weapon-btn {
+  left: 45.4%;
+}
+.next-weapon-btn {
+  right: 45.4%;
+}
+
+.weapon-details__item {
+  position: relative;
+  width: 85px;
+  height: 85px;
+  padding: 6px 0;
+  margin-left: 5px;
+  border: 2px solid #ffffff7f;
+  background-color: rgba(217, 217, 217, 0.15);
+  cursor: pointer;
+  &--icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

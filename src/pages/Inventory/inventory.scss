@@ -10,16 +10,15 @@
   background-position: center;
   background-size: cover;
   overflow: hidden;
-}
-
-.background-blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #10121b66;
-  backdrop-filter: blur(6px);
+  .background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #10121b66;
+    backdrop-filter: blur(6px);
+  }
 }
 
 .inventory__wrapper--main {
@@ -27,7 +26,7 @@
   width: 100%;
   height: 100%;
   max-width: 1440px;
-  padding: 110px;
+  padding-top: 110px;
   margin: 0 auto;
   z-index: 8;
   display: flex;

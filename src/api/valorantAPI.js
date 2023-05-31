@@ -23,6 +23,10 @@ const valorantAPI = {
     const url = "weapons/";
     return axiosClient.get(url);
   },
+  getWeaponDetails: (id) => {
+    const url = "weapons/" + id;
+    return axiosClient.get(url);
+  },
   getPlayerCards: () => {
     const url = "playercards/";
     return axiosClient.get(url);
