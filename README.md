@@ -8,7 +8,7 @@
 - Make luv not war 💖💛🧡💚💙💜
 
 HOMEPAGE
-![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/3a36510e-9017-4a13-a679-74ec67f7f46b)
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/70d41d80-2dc2-4748-8bcd-29daa2c7d08a)
 
 ![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/db835389-8da0-466a-87e3-181d9a1bc151)
 
