@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
-import { ValEP6, topNews } from "../../../../assets";
+import { topNews, videoBg } from "../../../../assets";
 import valogo from "../../../../../public/logo/valogo.png";
 import HomeSection from "../HomeSection";
+import HomeNavbar from "../../../../layouts/components/OnlyHomeNavbar/HomeNavbar";
 import { newsList } from "../../../../constants";
 import { btnPrev } from "../../../../assets";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -52,7 +53,19 @@ const Welcome = (props) => {
       contentClassName="welcome-section__content overlay"
     >
       <div className="video-bg">
-        <video src={ValEP6} autoPlay loop={true} muted={true} />
+        <video src={videoBg} autoPlay loop={true} muted={true} />
+      </div>
+      <HomeNavbar />
+      <div className="valorant-topLeft">
+        <div className="valogo-mini">
+          <img src={valogo} alt="" className="valogo-mini__img" />
+        </div>
+        <div className="valorant__title">
+          <h2 className="valorant__title--main">Evolution</h2>
+          <h4 className="valorant__title--sub">
+            Episode 7 &nbsp; // &nbsp; Act I
+          </h4>
+        </div>
       </div>
       <div className={!showNews ? "news-container hide" : "news-container"}>
         <div className="news-toggle__btn" onClick={handleShowNews}>
@@ -61,7 +74,7 @@ const Welcome = (props) => {
         <div className="news__content--main">
           <img src={topNews} alt="" className="news__img" />
           <div className="news__bottom">
-            <h1 className="news__title">Run It Back 4</h1>
+            <h1 className="news__title">Featured</h1>
             <span>collection</span>
           </div>
         </div>

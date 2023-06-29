@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import SocialList from "./social-list/";
 import HomeFooter from "./home-footer";
 import { Welcome, Agent, Credits, Trailer } from "./home-section";
-import { btnPrev } from "../../assets";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectFade, Mousewheel, Navigation } from "swiper";
 import "swiper/swiper-bundle.css";
@@ -55,25 +54,10 @@ const Home = () => {
     },
   };
 
-  const handlePrev = () => {
-    if (swiperRef.current && swiperRef.current.slidePrev) {
-      swiperRef.current.swiper?.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current && swiperRef.current.slideNext) {
-      swiperRef.current.swiper?.slideNext();
-    }
-  };
-
   return (
     <>
       <div className="home-container">
         <SocialList />
-        <div className="prev-slide-btn">
-          <img src={btnPrev} alt="" onClick={handlePrev} />
-        </div>
         <Swiper {...swiperOptions} id="mainSwiper" ref={swiperRef}>
           <SwiperSlide>
             {({ isActive }) => <Welcome isActive={isActive} />}
@@ -88,9 +72,6 @@ const Home = () => {
             {({ isActive }) => <Trailer isActive={isActive} />}
           </SwiperSlide>
         </Swiper>
-        <div className="next-slide-btn">
-          <img src={btnPrev} alt="" onClick={handleNext} />
-        </div>
         <HomeFooter current={`0${activeSection}`} total="04" />
       </div>
     </>

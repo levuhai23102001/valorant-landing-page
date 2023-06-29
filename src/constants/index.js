@@ -7,41 +7,47 @@ import {
   DiscordIcon,
 } from "../components/Icons";
 
+import {
+  agentIcon,
+  collectionIcon,
+  homeIcon,
+  mapsIcon,
+  newsIcon,
+} from "../assets";
+
 export const mainMenuList = [
   {
     title: "Home",
     path: "/",
+    img: homeIcon,
   },
   {
     title: "Agents",
     path: "/agents",
+    img: agentIcon,
   },
   {
     title: "Inventory",
     path: "/inventory",
-  },
-  {
-    title: "Maps",
-    path: "/maps",
+    img: collectionIcon,
   },
 ];
 
 export const subMenuList = [
   {
+    title: "Map",
+    path: "/maps",
+    img: mapsIcon,
+  },
+  {
     title: "News",
     path: "/news",
+    img: newsIcon,
   },
   {
     title: "Media",
     path: "/media",
-  },
-  {
-    title: "Esports",
-    path: "/esports",
-  },
-  {
-    title: "Support",
-    path: "/support",
+    img: mapsIcon,
   },
 ];
 

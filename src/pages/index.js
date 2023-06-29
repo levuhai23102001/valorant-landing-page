@@ -6,6 +6,7 @@ import News from "./News/News";
 import Inventory from "./Inventory/Inventory";
 import AgentDetails from "./Agent-details/AgentDetails";
 import WeaponDetails from "./Weapons-details/WeaponDetails";
+import PlayerCardDetails from "./PlayerCard-details/PlayerCardDetails";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   Inventory,
   AgentDetails,
   WeaponDetails,
+  PlayerCardDetails,
 };

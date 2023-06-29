@@ -2,10 +2,17 @@ import React from "react";
 import { InventList } from "../../components/List";
 import { categories } from "../../api/valorantAPI";
 import { PlayerCard } from "../../components/Card";
+import { useNavigate } from "react-router-dom";
 
 import "./inventory.scss";
 
 const Inventory = () => {
+  const navigate = useNavigate();
+
+  const handlePlayerCardClick = () => {
+    navigate("/inventory/player-cards");
+  };
+
   return (
     <div className="inventory-container">
       <div className="background-blur"></div>
@@ -35,7 +42,7 @@ const Inventory = () => {
         </div>
         <div className="inventory__column">
           <h1 className="inventory__header__title">Player Cards</h1>
-          <PlayerCard onClickCard={() => console.log("clicked")} />
+          <PlayerCard onClickCard={handlePlayerCardClick} />
         </div>
         <h1 className="inventory__title--main">Collection</h1>
       </div>

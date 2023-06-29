@@ -9,6 +9,7 @@ import {
   Inventory,
   AgentDetails,
   WeaponDetails,
+  PlayerCardDetails,
 } from "../pages";
 
 const myRoutes = [
@@ -17,6 +18,7 @@ const myRoutes = [
   { path: configs.routes.agent_details, component: AgentDetails },
   { path: configs.routes.inventory, component: Inventory },
   { path: configs.routes.weapons, component: WeaponDetails },
+  { path: configs.routes.player_cards, component: PlayerCardDetails },
   { path: configs.routes.maps, component: Maps },
   { path: configs.routes.news, component: News },
   { path: configs.routes.media, component: Media },

@@ -13,7 +13,7 @@ const InventList = (props) => {
     const getWeapon = async () => {
       try {
         const response = await valorantAPI.getWeaponsList();
-        const weaponsData = response.data;
+        const weaponsData = await response.data;
         const filterWeapon = weaponsData.data.filter(
           (weapon) => weapon.category === `${props.category}`
         );

@@ -31,6 +31,23 @@
   z-index: 8;
   display: flex;
   justify-content: center;
+  &--main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    h1 {
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .weapon-details__fullImg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
   &--bottom {
     position: absolute;
     bottom: 10px;
