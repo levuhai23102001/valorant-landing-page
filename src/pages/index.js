@@ -4,7 +4,6 @@ import Maps from "./Maps/Maps";
 import Media from "./Media/Media";
 import News from "./News/News";
 import Inventory from "./Inventory/Inventory";
-import AgentDetails from "./Agent-details/AgentDetails";
 import WeaponDetails from "./Weapons-details/WeaponDetails";
 import PlayerCardDetails from "./PlayerCard-details/PlayerCardDetails";
 
@@ -15,7 +14,6 @@ export {
   Media,
   News,
   Inventory,
-  AgentDetails,
   WeaponDetails,
   PlayerCardDetails,
 };

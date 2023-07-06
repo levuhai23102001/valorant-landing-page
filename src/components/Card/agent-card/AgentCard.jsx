@@ -11,16 +11,17 @@ const AgentCard = (props) => {
 
   return (
     <>
-      <div className="agent-card" onClick={props.onClickAgent}>
+      <div
+        className="agent-card"
+        style={bgColor}
+        onClick={props.clickActiveAgent}
+      >
         <img src={props.agentImg} alt="" className="agent-card__img" />
-        <div className="agent-card__background--tagname" style={bgColor}>
-          <img src={props.bgTagName} alt="" className="agent-card__bgTagName" />
-        </div>
-        <div className="agent-card__radiant">
-          <img src={radiant} alt="" className="agent-card__radiant-icon" />
+        <div className="agent-card__bottom">
+          <h3 className="agent-card__bottom--name">{props.name}</h3>
         </div>
       </div>
-      <h1 className="agent-card__name">{props.name}</h1>
+      <div className="agent-card__border"></div>
     </>
   );
 };

@@ -1,83 +1,55 @@
 @use "../../../scss/" as *;
 
 .agent-card {
-  --column: 5;
-  --spacing: 50px;
+  // --column: 5;
+  --spacing: 10px;
   position: relative;
   @include flex(center, center);
   flex-direction: column;
   //   width: calc(calc(100% / var(--column) - var(--spacing)));
-  height: 500px;
+  height: 200px;
   margin-left: var(--spacing);
-  background-image: url("../../../assets/backgrounds/cardBg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(to bottom, #443e4f 10%, #25222b 60%);
+  border: 3px solid #352d3e;
   overflow: hidden;
   cursor: pointer;
-  clip-path: polygon(
-    100% 0,
-    100% 80%,
-    50% 100%,
-    50% 100%,
-    50% 100%,
-    0% 80%,
-    0 0
-  );
   &__img {
     position: absolute;
-    width: 636px;
-    height: 580px;
+    top: -100px;
+    width: 600px; //636px
+    height: 600px; //580px
     object-fit: contain;
     z-index: 9;
     filter: drop-shadow(11px 10px 0 rgba(0, 0, 0, 0.6));
   }
-  &__background--tagname {
-    position: relative;
-    width: 208px;
-    height: 470px;
-    clip-path: polygon(
-      100% 0,
-      100% 81.5%,
-      50% 100%,
-      50% 100%,
-      50% 100%,
-      0% 81.5%,
-      0 0
-    );
-    img {
-      position: absolute;
-      top: -85px;
-      left: -85px;
-      width: 369px;
-      height: 650px;
-      object-fit: fill;
-      opacity: 0.3;
-    }
-  }
-  &__name {
+  &__bottom {
     position: absolute;
-    top: 100px;
-    left: -50px;
-    width: 200px;
-    font-size: 30px;
-    line-height: 50px;
-    color: #ffffff00;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transform: rotate(90deg);
-    -webkit-text-stroke: 1px #e6cc9a;
-  }
-  &__radiant {
-    position: absolute;
-    bottom: 50px;
-    width: 60px;
+    bottom: 0;
+    width: 100%;
     height: 60px;
+    padding: 0 5px;
+    @include flex(center, center);
     z-index: 9;
-    &-icon {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    background: linear-gradient(
+      to bottom,
+      #443e4f00 10%,
+      rgba(37, 34, 43, 0.6) 60%
+    );
+    &--name {
+      font-size: 16px;
+      line-height: 16px;
+      color: #fff;
+      text-transform: uppercase;
     }
   }
+}
+
+.agent-card__border {
+  position: absolute;
+  top: -4px;
+  left: 6px;
+  width: 158px;
+  height: 208px;
+  border: 2px solid #00ffca;
+  opacity: 0;
 }

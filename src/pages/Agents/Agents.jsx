@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
 import { AgentCard } from "../../components/Card/";
-import { ValorantLogo } from "../../components/Icons";
 import valorantAPI from "../../api/valorantAPI";
+import Tabs, { TabsItem } from "../../components/Tabs/Tabs";
+import TabsContent from "../../components/Tabs/TabsContent";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 import "swiper/swiper-bundle.css";
 import "./agents.scss";
+import { ValEP6 } from "../../assets";
 
 SwiperCore.use([]);
 
 const Agents = () => {
   const [agents, setAgents] = useState([]);
-  const navigate = useNavigate();
+  const [agentIndex, setAgentIndex] = useState(0);
+  const [tabs, setTabs] = useState(0);
+  const tabActive = useRef();
+  const swiperAgentRef = useRef(null);
 
   useEffect(() => {
     const getAgents = async () => {
@@ -28,32 +32,97 @@ const Agents = () => {
   }, []);
 
   const swiperOptions = {
-    slidesPerView: 5,
+    slidesPerView: 9,
     speed: 500,
+    centeredSlides: true,
+    // loop: true,
+    onSlideChange: (swiper) => {
+      setAgentIndex(swiper.activeIndex);
+    },
   };
 
-  const handleClickDetailsAgent = (agent) => {
-    navigate(`/agents/` + agent.uuid);
+  const handleClickActiveAgent = (index) => {
+    swiperAgentRef.current.swiper?.slideTo(index);
+    console.log("agent" + index);
   };
 
   return (
     <div className="agents-container">
       <div className="agent__wrapper--main">
-        <div className="center-logo">
-          <ValorantLogo />
-        </div>
+        <div className="agent__background-blur"></div>
         <div className="agent-content">
-          <Swiper {...swiperOptions} className="agentsSwiper">
+          <div className="game-play--video">
+            <video autoPlay loop>
+              <source src={ValEP6} type="video/mp4" />
+            </video>
+          </div>
+          {agents.length > 0 && (
+            <>
+              <div className="agent__portrait">
+                <img
+                  src={agents[agentIndex].fullPortrait}
+                  alt=""
+                  className="agent__portrait--img"
+                />
+              </div>
+              <div className="agent__details">
+                <div className="agent__details--wrapper">
+                  <div className="agent__info">
+                    <p className="role-text">
+                      {agents[agentIndex]?.role?.displayName}
+                    </p>
+                    <h1 className="agent-name">
+                      {agents[agentIndex].displayName}
+                    </h1>
+                    <h3 className="agent__introduce">
+                      {agents[agentIndex].description}
+                    </h3>
+                  </div>
+                  <Tabs>
+                    {agents[agentIndex]?.abilities
+                      .slice(0, 4)
+                      .map((item, index) => (
+                        <TabsItem
+                          key={index}
+                          // ref={tabActive}
+                          cName={
+                            tabs === index ? "tabs-item active" : "tabs-item"
+                          }
+                          clickTabsItem={() => setTabs(index)}
+                          icon={item.displayIcon}
+                        />
+                      ))}
+                  </Tabs>
+
+                  {agents[agentIndex]?.abilities
+                    .slice(0, 4)
+                    .map((item, index) => (
+                      <TabsContent
+                        key={index}
+                        cName={tabs === index ? "tab-pane active" : "tab-pane"}
+                      >
+                        <h3>{item.displayName}</h3>
+                        <p>{item.description}</p>
+                      </TabsContent>
+                    ))}
+                </div>
+              </div>
+            </>
+          )}
+          <Swiper
+            {...swiperOptions}
+            className="agentsSwiper"
+            ref={swiperAgentRef}
+          >
             {agents.map((agent, index) => (
               <SwiperSlide key={agent.uuid}>
                 <AgentCard
-                  onClickAgent={() => handleClickDetailsAgent(agent)}
+                  clickActiveAgent={() => handleClickActiveAgent(index)}
                   agentImg={agent.fullPortrait}
-                  bgColor={agent.backgroundGradientColors.map(
-                    (color) => `#${color}`
-                  )}
-                  bgTagName={agent.background}
                   name={agent.displayName}
+                  // bgColor={agent.backgroundGradientColors.map(
+                  //   (color) => `#${color}`
+                  // )}
                 />
               </SwiperSlide>
             ))}

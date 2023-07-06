@@ -7,7 +7,6 @@ import {
   News,
   Media,
   Inventory,
-  AgentDetails,
   WeaponDetails,
   PlayerCardDetails,
 } from "../pages";
@@ -15,8 +14,7 @@ import {
 const myRoutes = [
   { path: configs.routes.home, component: Home },
   { path: configs.routes.agents, component: Agents },
-  { path: configs.routes.agent_details, component: AgentDetails },
-  { path: configs.routes.inventory, component: Inventory },
+  { path: configs.routes.collection, component: Inventory },
   { path: configs.routes.weapons, component: WeaponDetails },
   { path: configs.routes.player_cards, component: PlayerCardDetails },
   { path: configs.routes.maps, component: Maps },

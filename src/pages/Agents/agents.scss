@@ -11,53 +11,189 @@
 .agent__wrapper--main {
   position: relative;
   width: 100%;
-  height: 85%;
+  height: 100%;
   @include flex(center, center);
-  background-image: url(../../assets/backgrounds/agentBgSprite.png);
-  -webkit-box-reflect: below 2px
-    linear-gradient(
-      transparent,
-      transparent,
-      transparent,
-      transparent,
-      transparent,
-      #0008
-    );
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50px;
-    background-image: url(../../assets/backgrounds/bgSprite.png);
-    width: 100%;
-    height: 100%;
-  }
-  .center-logo {
-    position: absolute;
-    width: 550px;
-    height: 460px;
-    top: 25%;
-    svg {
-      width: 100%;
-      height: 100%;
-      color: $main-color;
-      filter: drop-shadow(0 0 5rem $main-color);
-    }
-  }
+  background-image: url(../../assets/backgrounds/agentBg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.agent__background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(50, 39, 65, 0.6), #000);
+  backdrop-filter: blur(3px);
 }
 
 .agent-content {
   position: absolute;
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto 0 -50px;
+  margin: 0 auto;
   height: 100%;
-  z-index: 99;
+  display: flex;
+  align-items: center;
 }
 
 .agentsSwiper {
   position: absolute;
-  top: 20%;
+  bottom: 25px;
   width: 100%;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  .swiper-wrapper {
+    height: auto;
+    margin-left: -6px;
+    .swiper-slide {
+      &-active {
+        .agent-card__border {
+          opacity: 1;
+        }
+        .agent-card__bottom {
+          background: linear-gradient(
+            to bottom,
+            #443e4f00 10%,
+            rgba(0, 255, 202, 0.5) 70%
+          );
+        }
+      }
+    }
+  }
+}
+
+.agent__portrait {
+  position: absolute;
+  top: 0px;
+  &--img {
+    width: 1440px;
+    height: 1307px;
+    object-fit: cover;
+    transform: scale(1.2);
+  }
+}
+
+.game-play--video {
+  position: absolute;
+  top: 20%;
+  width: 400px;
+  height: 225px;
+  z-index: 10;
+  border: 3px solid $main-color;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.agent__details {
+  position: absolute;
+  top: 3.5rem;
+  width: 23%;
   height: 100%;
+  right: 50px;
+  display: flex;
+  z-index: 10;
+  &--wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .agent__info {
+    display: flex;
+    flex-direction: column;
+    .role-text {
+      color: rgb(255, 255, 255);
+      margin-left: 2px;
+      font-family: $main-font;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: 600;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .agent-name {
+      font-family: $second-font;
+      color: #eaeeb2;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 80px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .agent__introduce {
+      font-size: 12px;
+      font-family: "Montserrat", sans-serif;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      text-align: justify;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+.tabs-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(37, 34, 43, 0.5);
+  width: 60px;
+  height: 60px;
+  transition: 0.3s ease;
+  border: 3px solid #352d3e;
+  cursor: pointer;
+  &:hover {
+    background-color: #443e4f;
+    transition: 0.3s ease;
+  }
+  &.active {
+    background-color: #443e4f;
+    border: 3px solid #00ffca;
+    pointer-events: none;
+  }
+  img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+}
+
+.tab-pane {
+  display: none;
+  background-color: rgba(37, 34, 43, 0.5);
+  border: 3px solid #352d3e;
+  padding: 10px 15px;
+  margin-top: 6px;
+  &.active {
+    display: block;
+  }
+  h3 {
+    font-size: 16px;
+    font-family: "Anton", sans-serif;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  p {
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
 }

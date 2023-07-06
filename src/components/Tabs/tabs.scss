@@ -1,0 +1,9 @@
+@use "../../scss/" as *;
+
+.tabs {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  z-index: 10;
+}

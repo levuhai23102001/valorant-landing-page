@@ -15,7 +15,10 @@ const HomeNavbar = () => {
               </NavLink>
             </li>
             <li className="only-navbar-menu__item">
-              <NavLink to="/inventory" className="only-navbar-menu__item--link">
+              <NavLink
+                to="/collection"
+                className="only-navbar-menu__item--link"
+              >
                 <span>Collection</span>
               </NavLink>
             </li>

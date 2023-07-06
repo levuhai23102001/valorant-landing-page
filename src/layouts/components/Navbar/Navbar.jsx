@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="navbar-wrapper">
           <ul className="navbar-menu">
             {mainMenuList.map((item, index) => (
-              <li className="navbar-menu__item">
+              <li className="navbar-menu__item" key={index}>
                 <NavLink to={item.path} className="navbar-menu__item--link">
                   <img
                     src={item.img}

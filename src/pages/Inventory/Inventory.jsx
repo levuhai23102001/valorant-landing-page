@@ -3,6 +3,7 @@ import { InventList } from "../../components/List";
 import { categories } from "../../api/valorantAPI";
 import { PlayerCard } from "../../components/Card";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 import "./inventory.scss";
 
@@ -10,13 +11,14 @@ const Inventory = () => {
   const navigate = useNavigate();
 
   const handlePlayerCardClick = () => {
-    navigate("/inventory/player-cards");
+    navigate("/collection/player-cards");
   };
 
   return (
     <div className="inventory-container">
       <div className="background-blur"></div>
       <div className="inventory__wrapper--main">
+        <Sidebar />
         <div className="inventory__column">
           <h1 className="inventory__header__title">Side Arms</h1>
           <InventList category={categories.sideArm} />

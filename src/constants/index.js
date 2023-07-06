@@ -27,8 +27,8 @@ export const mainMenuList = [
     img: agentIcon,
   },
   {
-    title: "Inventory",
-    path: "/inventory",
+    title: "Collection",
+    path: "/collection",
     img: collectionIcon,
   },
 ];
