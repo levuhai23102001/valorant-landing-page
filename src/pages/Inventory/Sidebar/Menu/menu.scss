@@ -1,0 +1,53 @@
+@use "../../../../scss/" as *;
+
+.sidebar-title {
+  position: relative;
+  margin-bottom: 14px;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: -15px;
+    width: 6px;
+    height: 6px;
+    transform: rotate(45deg);
+    background-color: $main-color;
+  }
+}
+.sidebar-menu {
+  white-space: nowrap;
+  margin-bottom: 14px;
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: 0.3s;
+    &__link {
+      font-weight: 400;
+      padding: 10px;
+      font-size: 14px;
+      font-family: $second-font;
+    }
+    &__icon {
+      width: 50%;
+      height: 30px;
+      padding: 5px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.45);
+    }
+  }
+}

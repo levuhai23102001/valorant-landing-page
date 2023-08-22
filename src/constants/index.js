@@ -15,6 +15,8 @@ import {
   newsIcon,
 } from "../assets";
 
+import { categories } from "../api/valorantAPI";
+
 export const mainMenuList = [
   {
     title: "Home",
@@ -86,5 +88,36 @@ export const socialList = [
   {
     icon: DiscordIcon,
     path: "https://discord.gg/uTNXaAh8",
+  },
+];
+
+export const sideBarMenu = [
+  {
+    title: "Side Arms",
+    category: categories.sideArm,
+  },
+  {
+    title: "SMGs",
+    category: categories.smg,
+  },
+  {
+    title: "Shot Guns",
+    category: categories.shotgun,
+  },
+  {
+    title: "Rifles",
+    category: categories.rifle,
+  },
+  {
+    title: "Rifle Snipers",
+    category: categories.sniper,
+  },
+  {
+    title: "Machine Guns",
+    category: categories.heavy,
+  },
+  {
+    title: "Melee",
+    category: categories.melee,
   },
 ];

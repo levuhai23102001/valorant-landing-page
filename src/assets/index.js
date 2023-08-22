@@ -1,6 +1,4 @@
 import videoBg from "./backgrounds/HomePage.mp4";
-import ValEP6 from "./backgrounds/ValEP6.mp4";
-import VCTTokyo from "./backgrounds/VCTTokyo.mp4";
 import topNews from "./backgrounds/topNews.jpg";
 import LotusBg from "./backgrounds/LotusBg.jpg";
 import SplitBg from "./backgrounds/splitBg.jpg";
@@ -26,7 +24,6 @@ import newsIcon from "./news.png";
 
 export {
   videoBg,
-  ValEP6,
   topNews,
   newsBg1,
   newsBg2,
@@ -43,7 +40,6 @@ export {
   trailer,
   agentBg,
   radiant,
-  VCTTokyo,
   homeIcon,
   agentIcon,
   collectionIcon,

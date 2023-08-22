@@ -153,6 +153,19 @@
   transition: 0.3s ease;
   border: 3px solid #352d3e;
   cursor: pointer;
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-top: 6px solid #00ffca;
+    display: none;
+  }
   &:hover {
     background-color: #443e4f;
     transition: 0.3s ease;
@@ -161,6 +174,9 @@
     background-color: #443e4f;
     border: 3px solid #00ffca;
     pointer-events: none;
+    &::before {
+      display: block;
+    }
   }
   img {
     width: 60%;

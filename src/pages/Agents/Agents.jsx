@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 import "swiper/swiper-bundle.css";
 import "./agents.scss";
-import { ValEP6 } from "../../assets";
 
 SwiperCore.use([]);
 
@@ -34,7 +33,7 @@ const Agents = () => {
   const swiperOptions = {
     slidesPerView: 9,
     speed: 500,
-    centeredSlides: true,
+    // centeredSlides: true,
     // loop: true,
     onSlideChange: (swiper) => {
       setAgentIndex(swiper.activeIndex);
@@ -51,11 +50,11 @@ const Agents = () => {
       <div className="agent__wrapper--main">
         <div className="agent__background-blur"></div>
         <div className="agent-content">
-          <div className="game-play--video">
+          {/* <div className="game-play--video">
             <video autoPlay loop>
               <source src={ValEP6} type="video/mp4" />
             </video>
-          </div>
+          </div> */}
           {agents.length > 0 && (
             <>
               <div className="agent__portrait">

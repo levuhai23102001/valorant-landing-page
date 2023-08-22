@@ -1,13 +1,11 @@
 import React from "react";
+import Menu from "./Menu/Menu";
+import MenuItem from "./Menu/MenuItem";
 
 import "./sidebar.scss";
 
-const Sidebar = () => {
-  return (
-    <div className="sidebar">
-      <div className="sidebar-wrapper"></div>
-    </div>
-  );
+const Sidebar = ({ name }) => {
+  return <div className="sidebar"></div>;
 };
 
 export default Sidebar;
