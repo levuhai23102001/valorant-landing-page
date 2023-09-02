@@ -1,1 +1,8 @@
 @use "../../../scss/" as *;
+
+.inventory-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(678px, 1fr));
+  margin-bottom: 3rem;
+  margin-left: -20px;
+}

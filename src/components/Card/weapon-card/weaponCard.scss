@@ -1,0 +1,46 @@
+@use "../../../scss/" as *;
+
+.weapon-card {
+  --spacing: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 140px;
+  margin-left: var(--spacing);
+  margin-bottom: var(--spacing);
+  padding: 10px;
+  border: 2px solid transparent;
+  background: rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    border: 2px solid #00ffca;
+    .weapon-card__img {
+      filter: drop-shadow(8px 8px 0 rgba(52, 54, 56, 0.811));
+      transition: 0.3s ease;
+    }
+  }
+  &__top {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    margin-bottom: 8px;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.3s ease;
+  }
+  &__title {
+    font-size: 11px;
+    letter-spacing: 1px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    overflow: hidden;
+  }
+}

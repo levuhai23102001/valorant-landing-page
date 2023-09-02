@@ -4,7 +4,8 @@
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50px);
+  transition: all 0.3s linear;
 }
 
 .navbar {
@@ -15,6 +16,12 @@
   white-space: nowrap;
   background-color: rgba(0, 0, 0, 0.3);
   clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+}
+
+.navbar-fixed.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition: all 0.3s linear;
 }
 
 .navbar-wrapper {

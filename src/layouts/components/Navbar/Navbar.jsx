@@ -5,10 +5,10 @@ import { mainMenuList, subMenuList } from "../../../constants";
 
 import "./navbar.scss";
 
-const Navbar = () => {
+const Navbar = ({ isShow }) => {
   return (
     <>
-      <nav className="navbar navbar-fixed">
+      <nav className={`navbar navbar-fixed ${isShow}`}>
         <div className="navbar-wrapper">
           <ul className="navbar-menu">
             {mainMenuList.map((item, index) => (

@@ -12,12 +12,18 @@ const InventList = (props) => {
   useEffect(() => {
     const getWeapon = async () => {
       try {
+        // const response = await valorantAPI.getWeaponsList();
+        // const weaponsData = await response.data;
+        // const filterWeapon = weaponsData.data.filter(
+        //   (weapon) => weapon.category === `${props.category}`
+        // );
+        // const sortedWeapons = filterWeapon.sort(
+        //   (a, b) => a.shopData?.cost - b.shopData?.cost
+        // );
+        // setWeapons(sortedWeapons);
         const response = await valorantAPI.getWeaponsList();
         const weaponsData = await response.data;
-        const filterWeapon = weaponsData.data.filter(
-          (weapon) => weapon.category === `${props.category}`
-        );
-        const sortedWeapons = filterWeapon.sort(
+        const sortedWeapons = weaponsData.data.sort(
           (a, b) => a.shopData?.cost - b.shopData?.cost
         );
         setWeapons(sortedWeapons);
@@ -29,7 +35,7 @@ const InventList = (props) => {
   }, []);
 
   const handleClickItem = (weapon) => {
-    navigate("weapons/" + weapon.uuid);
+    navigate("/collection/" + weapon.uuid);
   };
 
   return (

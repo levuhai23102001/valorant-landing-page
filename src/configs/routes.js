@@ -2,6 +2,8 @@ const routes = {
   home: "/",
   agents: "/agents",
   collection: "/collection",
+  weapons_detail: "/collection/:id",
+  player_card: "/collection/player-cards",
   news: "/news",
   media: "/media",
   maps: "/maps",

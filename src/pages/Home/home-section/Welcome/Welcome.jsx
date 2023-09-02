@@ -63,7 +63,7 @@ const Welcome = (props) => {
         <div className="valorant__title">
           <h2 className="valorant__title--main">Evolution</h2>
           <h4 className="valorant__title--sub">
-            Episode 7 &nbsp; // &nbsp; Act I
+            Episode 7 &nbsp; // &nbsp; Act II
           </h4>
         </div>
       </div>

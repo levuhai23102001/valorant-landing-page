@@ -29,7 +29,11 @@
     display: flex;
     align-items: center;
     border-radius: 6px;
+    margin-bottom: 5px;
     transition: 0.3s;
+    &.active {
+      background-color: rgba(255, 255, 255, 0.45);
+    }
     &__link {
       font-weight: 400;
       padding: 10px;

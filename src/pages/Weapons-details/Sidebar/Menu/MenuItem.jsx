@@ -1,14 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-const MenuItem = ({ onMenuItemClick, name, icon }) => {
+const MenuItem = ({ to, name, icon }) => {
   return (
     <>
-      <li className="sidebar-menu__item" onClick={onMenuItemClick}>
+      <NavLink to={to} className="sidebar-menu__item">
         <span className="sidebar-menu__item__link">{name}</span>
         <div className="sidebar-menu__item__icon">
           <img src={icon} alt="" />
         </div>
-      </li>
+      </NavLink>
     </>
   );
 };

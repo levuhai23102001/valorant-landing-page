@@ -1,78 +1,75 @@
 @use "../../../scss/" as *;
 
 .inventory-card {
+  --spacing: 20px;
   position: relative;
-  width: 200px;
-  height: 100px;
-  padding: 10px 20px;
-  border: 1px solid #ffffff50;
-  background-color: #ffffff20;
-  backdrop-filter: blur(5px);
-  margin-bottom: 20px;
-  transition: 0.3s ease;
-  cursor: pointer;
+  display: flex;
+  @include flex(center, center);
+  height: 460px;
+  padding: 3rem;
+  margin-left: var(--spacing);
+  margin-bottom: var(--spacing);
+  background: rgba(255, 255, 255, 0.2);
   overflow: hidden;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 25px;
-    height: 25px;
-    background-color: rgba(225, 225, 225, 0.3);
-    clip-path: polygon(100% 0, 0 0, 0 100%);
-    transition: 0.3s ease;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    opacity: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 69%,
-      rgb(0, 255, 202, 0.4)
-    );
-    transition: 0.3s ease;
-  }
+  cursor: pointer;
   &:hover {
-    border: 1px solid #00ffca;
-    transition: 0.3s ease;
+    .inventory-card__bg-hover::before {
+      transform: translateX(0) skew(-10deg);
+      transition: 0.3s ease-out;
+    }
+  }
+  &__bg-hover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120%;
+    height: calc(100% + 0.1rem);
+    overflow: hidden;
     &::before {
-      background-color: #00ffca;
-      transition: 0.3s ease;
-    }
-    &::after {
-      opacity: 1;
-      transition: 0.3s ease;
-    }
-    .inventory-card__img {
-      filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.6));
-      transition: 0.3s ease;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: rgba(0, 255, 202, 0.84);
+      transform: translateX(-110%) skew(-10deg);
+      transition: 0.3s ease-out;
+      z-index: 8;
     }
   }
   &__content {
     position: relative;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
   }
   &__img {
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: 0.3s ease;
+    height: 50%;
+    &--main {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(22px 24px 0 rgba(15, 25, 35, 0.95));
+    }
   }
   &__name {
-    position: absolute;
-    bottom: 2px;
-    left: 2px;
-    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
     text-transform: uppercase;
-    font-size: 10px;
-    color: #ffffffa1;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    filter: drop-shadow(10px 8px 8px rgba(15, 25, 35, 0.95));
+    z-index: 9;
+  }
+
+  &__desc {
+    font-size: 14px;
+    font-family: $main-font;
   }
 }
