@@ -14,7 +14,6 @@ const Agents = () => {
   const [agents, setAgents] = useState([]);
   const [agentIndex, setAgentIndex] = useState(0);
   const [tabs, setTabs] = useState(0);
-  const tabActive = useRef();
   const swiperAgentRef = useRef(null);
 
   useEffect(() => {
@@ -50,11 +49,6 @@ const Agents = () => {
       <div className="agent__wrapper--main">
         <div className="agent__background-blur"></div>
         <div className="agent-content">
-          {/* <div className="game-play--video">
-            <video autoPlay loop>
-              <source src={ValEP6} type="video/mp4" />
-            </video>
-          </div> */}
           {agents.length > 0 && (
             <>
               <div className="agent__portrait">

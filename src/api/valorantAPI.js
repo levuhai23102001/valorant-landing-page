@@ -31,6 +31,10 @@ const valorantAPI = {
     const url = "playercards/";
     return axiosClient.get(url);
   },
+  getMaps: () => {
+    const url = "maps";
+    return axiosClient.get(url);
+  },
 };
 
 export default valorantAPI;
