@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MapSection from "./map-section/MapSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
@@ -13,7 +13,7 @@ SwiperCore.use([]);
 const Maps = () => {
   const [items, setItems] = useState([]);
   const [mapsIndex, setMapsIndex] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const mapSwiperRef = useRef(null);
 
   useEffect(() => {
     const getItems = async () => {
@@ -38,6 +38,21 @@ const Maps = () => {
     },
   };
 
+  const handleMapImageClick = (index) => {
+    if (mapSwiperRef.current) {
+      let newIndex = index;
+      const maxIndex = items.length - 1;
+
+      if (newIndex < 0) {
+        newIndex = maxIndex;
+      } else if (newIndex > maxIndex) {
+        newIndex = 0;
+      }
+
+      mapSwiperRef.current.swiper?.slideToLoop(newIndex);
+    }
+  };
+
   return (
     <>
       <div className="maps-container">
@@ -56,10 +71,13 @@ const Maps = () => {
           <span className="total-num">{items.length}</span>
         </div>
         {items.length > 0 && (
-          <Swiper {...swiperOptions} id="mapSwiper">
+          <Swiper {...swiperOptions} id="mapSwiper" ref={mapSwiperRef}>
             {items.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="map-img">
+                <div
+                  className="map-img"
+                  onClick={() => handleMapImageClick(index)}
+                >
                   <img src={item.splash} alt="" className="map-img__splash" />
                 </div>
               </SwiperSlide>

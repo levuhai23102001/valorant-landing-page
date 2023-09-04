@@ -33,15 +33,25 @@ const Agents = () => {
     slidesPerView: 9,
     speed: 500,
     // centeredSlides: true,
-    // loop: true,
+    loop: true,
     onSlideChange: (swiper) => {
-      setAgentIndex(swiper.activeIndex);
+      setAgentIndex(swiper.realIndex);
     },
   };
 
   const handleClickActiveAgent = (index) => {
-    swiperAgentRef.current.swiper?.slideTo(index);
-    console.log("agent" + index);
+    if (swiperAgentRef.current) {
+      let newIndex = index;
+      const maxIndex = agents.length - 1;
+
+      if (newIndex < 0) {
+        newIndex = maxIndex;
+      } else if (newIndex > maxIndex) {
+        newIndex = 0;
+      }
+
+      swiperAgentRef.current.swiper?.slideToLoop(newIndex);
+    }
   };
 
   return (
