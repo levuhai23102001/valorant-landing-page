@@ -4,8 +4,8 @@
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -50px);
-  transition: all 0.3s linear;
+  // transform: translate(-50%, -50px);
+  // transition: all 0.3s linear;
 }
 
 .navbar {
@@ -22,7 +22,17 @@
   opacity: 1;
   transform: translate(-50%, 0);
   transition: all 0.3s linear;
+  // animation: zoomIn 0.5s ease;
 }
+
+// @keyframes zoomIn {
+//   0% {
+//     transform: translate(-50%, -50px) scale(0);
+//   }
+//   100% {
+//     transform: translate(-50%, 0) scale(1);
+//   }
+// }
 
 .navbar-wrapper {
   position: relative;

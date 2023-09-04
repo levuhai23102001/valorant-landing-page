@@ -82,3 +82,28 @@
     line-height: 1.1;
   }
 }
+
+.maps-index {
+  position: absolute;
+  bottom: 250px;
+  right: 50px;
+  display: flex;
+  align-items: flex-end;
+  font-style: italic;
+  letter-spacing: 1px;
+  // font-family: "Anton", sans-serif;
+  .current-index {
+    font-size: 50px;
+  }
+  .total-num {
+    font-size: 16px;
+    margin-bottom: 11px;
+  }
+  .divider {
+    margin: 0 6px 11px;
+  }
+  .total-num,
+  .divider {
+    color: #00ffca;
+  }
+}
