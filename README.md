@@ -26,4 +26,5 @@ WEAPON DETAILS PAGE
 ![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/7543a005-9098-4318-a107-a141f3aa307a)
 
 MAPS PAGE
-![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/fd0e2e01-5955-4829-ae6e-729fffeab7d4)
+![image](https://github.com/levuhai23102001/valorant-landing-page/assets/58142935/23b481b8-5cee-42e5-9908-babf47be1af7)
+
