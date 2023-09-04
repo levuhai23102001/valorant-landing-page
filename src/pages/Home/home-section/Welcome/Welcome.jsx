@@ -9,12 +9,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
 import "./welcome.scss";
+import { Link } from "react-router-dom";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const Welcome = (props) => {
   const [showNews, setShowNews] = useState(true);
-
   const swiperRef = useRef(null);
 
   const swiperNewsOptions = {
@@ -101,7 +101,7 @@ const Welcome = (props) => {
       <div className="btn-wrapper">
         <div className="play-now__btn">
           <span className="square-2x"></span>
-          Play Now
+          <Link to="https://valorant.zing.vn/vi-vn/download/">Play Now</Link>
           <span className="square-2x"></span>
           <div className="play-now__btn__mask"></div>
         </div>
